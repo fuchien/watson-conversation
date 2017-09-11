@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-chat></app-chat>"
+module.exports = "<!-- <app-chat></app-chat> -->\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -58,7 +58,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -78,14 +78,17 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_chat_chat_component__ = __webpack_require__("../../../../../src/app/components/chat/chat.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_conversation_service__ = __webpack_require__("../../../../../src/app/services/conversation.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_ballons_ballons_component__ = __webpack_require__("../../../../../src/app/components/ballons/ballons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_hammerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_chat_chat_component__ = __webpack_require__("../../../../../src/app/components/chat/chat.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_conversation_service__ = __webpack_require__("../../../../../src/app/services/conversation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_ballons_ballons_component__ = __webpack_require__("../../../../../src/app/components/ballons/ballons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__guards_auth_guards__ = __webpack_require__("../../../../../src/app/guards/auth.guards.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -103,41 +106,63 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+var appRoutes = [
+    {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+    },
+    {
+        path: 'login',
+        component: __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */]
+    },
+    {
+        path: 'chat',
+        component: __WEBPACK_IMPORTED_MODULE_9__components_chat_chat_component__["a" /* ChatComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guards__["a" /* AuthGuard */]]
+    }
+];
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__components_chat_chat_component__["a" /* ChatComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_ballons_ballons_component__["a" /* BallonsComponent */]
+            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_chat_chat_component__["a" /* ChatComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_ballons_ballons_component__["a" /* BallonsComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["g" /* MdNativeDateModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MdIconModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["i" /* MdTabsModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["h" /* MdSelectModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MdDatepickerModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["j" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MdInputModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["f" /* MdMenuModule */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* HttpModule */]
+            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["g" /* MdNativeDateModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["d" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["i" /* MdTabsModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["h" /* MdSelectModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["c" /* MdDatepickerModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["j" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["a" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["e" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["f" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes)
         ],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_10__components_ballons_ballons_component__["a" /* BallonsComponent */]
+            __WEBPACK_IMPORTED_MODULE_11__components_ballons_ballons_component__["a" /* BallonsComponent */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_9__services_conversation_service__["a" /* ConversationService */]
+            __WEBPACK_IMPORTED_MODULE_10__services_conversation_service__["a" /* ConversationService */],
+            __WEBPACK_IMPORTED_MODULE_13__guards_auth_guards__["a" /* AuthGuard */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -221,11 +246,11 @@ var BallonsComponent = (function () {
     return BallonsComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('divContentBallon'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */]) === "function" && _a || Object)
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('divContentBallon'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object)
 ], BallonsComponent.prototype, "divContentBallon", void 0);
 BallonsComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-ballons',
         template: __webpack_require__("../../../../../src/app/components/ballons/ballons.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/ballons/ballons.component.css")]
@@ -246,7 +271,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".spacer {\r\n    -webkit-box-flex: 1;\r\n    -webkit-flex: 1 1 auto;\r\n       -moz-box-flex: 1;\r\n        -ms-flex: 1 1 auto;\r\n            flex: 1 1 auto;\r\n}\r\n\r\n.chat {\r\n    min-width: 80vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -moz-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n    -webkit-justify-content: center;\r\n       -moz-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n    -webkit-align-items: center;\r\n       -moz-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.form {\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -moz-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n    -webkit-flex-flow: column;\r\n       -moz-box-orient: vertical;\r\n       -moz-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n}\r\n\r\n.panelChat {\r\n    margin-top: 5vh;\r\n    min-height: 70vh;\r\n    border: 1px solid rgba(30,30,120,.7);\r\n    -webkit-border-radius: 5px;\r\n            border-radius: 5px;\r\n    max-height: 70vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n}\r\n\r\n.example-form {\r\n    min-width: 80vw;\r\n    width: 80vw;\r\n    min-height: 10vh;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}", ""]);
+exports.push([module.i, ".chat {\r\n    min-width: 80vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -moz-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n    -webkit-justify-content: center;\r\n       -moz-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n    -webkit-align-items: center;\r\n       -moz-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.form {\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -moz-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n    -webkit-flex-flow: column;\r\n       -moz-box-orient: vertical;\r\n       -moz-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n}\r\n\r\n.panelChat {\r\n    margin-top: 5vh;\r\n    min-height: 70vh;\r\n    border: 1px solid rgba(30,30,120,.7);\r\n    -webkit-border-radius: 5px;\r\n            border-radius: 5px;\r\n    max-height: 70vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-track {\r\n    background-color: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar {\r\n    width: 6px;\r\n    background: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-thumb {\r\n    background: rgba(11, 237, 114, .8);\r\n}\r\n\r\n.example-form {\r\n    min-width: 80vw;\r\n    width: 80vw;\r\n    min-height: 10vh;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}", ""]);
 
 // exports
 
@@ -348,16 +373,16 @@ var ChatComponent = (function () {
     return ChatComponent;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('divBallons', { read: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewContainerRef */] }),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('divBallons', { read: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* ViewContainerRef */] }),
     __metadata("design:type", Object)
 ], ChatComponent.prototype, "divBallons", void 0);
 ChatComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-chat',
         template: __webpack_require__("../../../../../src/app/components/chat/chat.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/chat/chat.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_conversation_service__["a" /* ConversationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_conversation_service__["a" /* ConversationService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectorRef */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* ComponentFactoryResolver */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["p" /* ComponentFactoryResolver */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_conversation_service__["a" /* ConversationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_conversation_service__["a" /* ConversationService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ComponentFactoryResolver */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ComponentFactoryResolver */]) === "function" && _c || Object])
 ], ChatComponent);
 
 var _a, _b, _c;
@@ -419,11 +444,128 @@ var ChatModel = (function () {
     return ChatModel;
 }());
 ChatModel = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
     __metadata("design:paramtypes", [])
 ], ChatModel);
 
 //# sourceMappingURL=chat.model.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/login/login.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".chat {\r\n    min-width: 80vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -moz-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n    -webkit-justify-content: center;\r\n       -moz-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n    -webkit-align-items: center;\r\n       -moz-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.example-full-width {\r\n    width: 30%;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/login/login.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"chat\">\n    \n    <md-form-field class=\"example-full-width\">\n      <input mdInput #login\n      placeholder=\"Digite seu nome\" (keypress)=\"eventKeyHandler($event, login.value)\">\n    </md-form-field>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/login/login.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_conversation_service__ = __webpack_require__("../../../../../src/app/services/conversation.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var LoginComponent = (function () {
+    function LoginComponent(router) {
+        this.router = router;
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent.prototype.eventKeyHandler = function (event, inputValue) {
+        if (event.keyCode == 13) {
+            __WEBPACK_IMPORTED_MODULE_2__services_conversation_service__["a" /* ConversationService */].setNome(inputValue);
+            this.router.navigate(['/chat']);
+        }
+    };
+    return LoginComponent;
+}());
+LoginComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-login',
+        template: __webpack_require__("../../../../../src/app/components/login/login.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/login/login.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object])
+], LoginComponent);
+
+var _a;
+//# sourceMappingURL=login.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/guards/auth.guards.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_conversation_service__ = __webpack_require__("../../../../../src/app/services/conversation.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AuthGuard = (function () {
+    function AuthGuard(router) {
+        this.router = router;
+    }
+    AuthGuard.prototype.canActivate = function () {
+        var nome = __WEBPACK_IMPORTED_MODULE_2__services_conversation_service__["a" /* ConversationService */].getNome();
+        if (nome !== '') {
+            return true;
+        }
+        this.router.navigate(['/']);
+        return false;
+    };
+    return AuthGuard;
+}());
+AuthGuard = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object])
+], AuthGuard);
+
+var _a;
+//# sourceMappingURL=auth.guards.js.map
 
 /***/ }),
 
@@ -448,13 +590,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var ConversationService = (function () {
+var ConversationService = ConversationService_1 = (function () {
     function ConversationService(_http) {
         this._http = _http;
         // private url: string = `http://localhost:3004/conversation`
         this.url = "/conversation";
         this.context = {};
     }
+    ConversationService.setNome = function (nome) {
+        this.nome = nome;
+    };
+    ConversationService.getNome = function () {
+        return this.nome;
+    };
     ConversationService.prototype.sendMessage = function (content) {
         var _this = this;
         content.setContext = this.context;
@@ -464,7 +612,8 @@ var ConversationService = (function () {
                 text: content.getText
             },
             // msg: content.getText,
-            context: content.getContext
+            context: content.getContext,
+            nome: ConversationService_1.getNome().split(' ')[0]
         });
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-type': 'application/json' });
         return this._http.post(this.url, body, { headers: headers })
@@ -475,12 +624,13 @@ var ConversationService = (function () {
     };
     return ConversationService;
 }());
-ConversationService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+ConversationService.nome = '';
+ConversationService = ConversationService_1 = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], ConversationService);
 
-var _a;
+var ConversationService_1, _a;
 //# sourceMappingURL=conversation.service.js.map
 
 /***/ }),
@@ -516,7 +666,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_20" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map

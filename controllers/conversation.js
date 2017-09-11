@@ -14,6 +14,7 @@ function ConversationController() {
         console.log(req.body)
         let context = req.body.context
         let text = req.body.input
+        let nome = req.body.nome
     
         conversation.message({
             workspace_id: '4631a90b-ee59-4e3f-bb27-3a2297f297a2',
@@ -23,7 +24,9 @@ function ConversationController() {
             if (err) {
                 console.log('error:', err);
             } else {
-                console.log(JSON.stringify(response, null, 2));
+                console.log(response.output.text[0]);
+                response.output.text[0] = response.output.text[0].replace('Hi.', `Hi ${nome}.`)
+                console.log(response.output.text[0]);
                 res.status(200).json(response)
             }
         });
