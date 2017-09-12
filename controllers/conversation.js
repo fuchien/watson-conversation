@@ -11,10 +11,10 @@ function ConversationController() {
         });
     
         // Replace with the context obtained from the initial request
-        console.log(req.body)
+        // console.log(req.body)
         let context = req.body.context
         let text = req.body.input
-        let nome = req.body.nome
+        let login = req.body.login
     
         conversation.message({
             workspace_id: '4631a90b-ee59-4e3f-bb27-3a2297f297a2',
@@ -24,7 +24,8 @@ function ConversationController() {
             if (err) {
                 console.log('error:', err);
             } else {
-                response.output.text[0] = response.output.text[0].replace('Hi.', `Hi ${nome}.`)
+
+                response.output.text[0] = response.output.text[0].replace('Hi.', `Hi ${login[0].nome}.`)
                 res.status(200).json(response)
             }
         });

@@ -85,16 +85,20 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_hammerjs__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_chat_chat_component__ = __webpack_require__("../../../../../src/app/components/chat/chat.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_conversation_service__ = __webpack_require__("../../../../../src/app/services/conversation.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_ballons_ballons_component__ = __webpack_require__("../../../../../src/app/components/ballons/ballons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__guards_auth_guards__ = __webpack_require__("../../../../../src/app/guards/auth.guards.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_conversation_service__ = __webpack_require__("../../../../../src/app/services/conversation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_ballons_ballons_component__ = __webpack_require__("../../../../../src/app/components/ballons/ballons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_error_user_error_user_component__ = __webpack_require__("../../../../../src/app/components/error-user/error-user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__guards_auth_guards__ = __webpack_require__("../../../../../src/app/guards/auth.guards.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -117,12 +121,12 @@ var appRoutes = [
     },
     {
         path: 'login',
-        component: __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */]
     },
     {
         path: 'chat',
         component: __WEBPACK_IMPORTED_MODULE_9__components_chat_chat_component__["a" /* ChatComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_13__guards_auth_guards__["a" /* AuthGuard */]]
+        canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guards__["a" /* AuthGuard */]]
     }
 ];
 var AppModule = (function () {
@@ -135,32 +139,38 @@ AppModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_9__components_chat_chat_component__["a" /* ChatComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_ballons_ballons_component__["a" /* BallonsComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */]
+            __WEBPACK_IMPORTED_MODULE_12__components_ballons_ballons_component__["a" /* BallonsComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_error_user_error_user_component__["a" /* ErrorUserComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["g" /* MdNativeDateModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["d" /* MdIconModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["i" /* MdTabsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["h" /* MdSelectModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["c" /* MdDatepickerModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["j" /* MdToolbarModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["a" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["e" /* MdInputModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["f" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["k" /* MdNativeDateModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["c" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["h" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["f" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["n" /* MdTabsModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["l" /* MdProgressBarModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["m" /* MdSelectModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["d" /* MdDatepickerModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["o" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["i" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["j" /* MdMenuModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes)
         ],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_11__components_ballons_ballons_component__["a" /* BallonsComponent */]
+            __WEBPACK_IMPORTED_MODULE_12__components_ballons_ballons_component__["a" /* BallonsComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_error_user_error_user_component__["a" /* ErrorUserComponent */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_10__services_conversation_service__["a" /* ConversationService */],
-            __WEBPACK_IMPORTED_MODULE_13__guards_auth_guards__["a" /* AuthGuard */]
+            __WEBPACK_IMPORTED_MODULE_11__services_conversation_service__["a" /* ConversationService */],
+            __WEBPACK_IMPORTED_MODULE_15__guards_auth_guards__["a" /* AuthGuard */],
+            __WEBPACK_IMPORTED_MODULE_10__services_user_service__["a" /* UserService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
     })
@@ -178,7 +188,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".divBallon {\r\n    min-width: 20%;\r\n    max-width: 60%;\r\n    -webkit-border-radius: 1rem;\r\n            border-radius: 1rem;\r\n    margin: 1vh auto;\r\n    padding: .4rem;\r\n    -webkit-user-select: text;\r\n       -moz-user-select: text;\r\n        -ms-user-select: text;\r\n            user-select: text;\r\n    cursor: text;\r\n}\r\n\r\n.logo {\r\n    width: 5%;\r\n}\r\n\r\n.ballon {\r\n    width: 92%;\r\n    padding: 0;\r\n}\r\n\r\n.ballonLeft {\r\n    float: left;\r\n    background-color: #00b0ff;\r\n    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);\r\n            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);\r\n    -webkit-border-top-left-radius: 0;\r\n            border-top-left-radius: 0;\r\n    color: #fff;\r\n    margin-left: 8vw;\r\n}\r\n\r\n.ballonRight {\r\n    float: right;\r\n    background-color: #eceff1;\r\n    -webkit-box-shadow: 0 1px 1px rgba(97, 18, 18, 0.5);\r\n            box-shadow: 0 1px 1px rgba(97, 18, 18, 0.5);\r\n    -webkit-border-top-right-radius: 0;\r\n            border-top-right-radius: 0;\r\n    word-wrap: break-word;\r\n    margin-right: 5vw;\r\n}\r\n\r\n.imgWatson {\r\n    -webkit-border-radius: 5px;\r\n            border-radius: 5px;\r\n    width: 3rem;\r\n    height: 2rem;\r\n    margin-top: 1.5vh;\r\n    padding: 0;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n\r\n    .divBallon {\r\n        -webkit-border-radius: 2rem;\r\n                border-radius: 2rem;\r\n        margin: 2vh auto;\r\n        padding: .5rem;\r\n    }\r\n\r\n    .logo {\r\n        padding-right: 0;\r\n    }\r\n\r\n    .imgWatson {\r\n        width: 4rem;\r\n        height: 3rem;\r\n    }\r\n\r\n    .ballon {\r\n        width: 100%;\r\n    }\r\n\r\n    .ballonLeft {\r\n        -webkit-border-top-left-radius: 0;\r\n                border-top-left-radius: 0;\r\n        margin-left: 0;\r\n    }\r\n\r\n    .ballonRight {\r\n        -webkit-border-top-right-radius: 0;\r\n                border-top-right-radius: 0;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".divBallon {\r\n    min-width: 20%;\r\n    max-width: 60%;\r\n    border-radius: 1rem;\r\n    margin: 1vh auto;\r\n    padding: .4rem;\r\n    -webkit-user-select: text;\r\n       -moz-user-select: text;\r\n        -ms-user-select: text;\r\n            user-select: text;\r\n    cursor: text;\r\n}\r\n\r\n.logo {\r\n    width: 5%;\r\n}\r\n\r\n.ballon {\r\n    width: 92%;\r\n    padding: 0;\r\n}\r\n\r\n.ballonLeft {\r\n    float: left;\r\n    background-color: #00b0ff;\r\n    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);\r\n    border-top-left-radius: 0;\r\n    color: #fff;\r\n    margin-left: 8vw;\r\n}\r\n\r\n.ballonRight {\r\n    float: right;\r\n    background-color: #eceff1;\r\n    box-shadow: 0 1px 1px rgba(97, 18, 18, 0.5);\r\n    border-top-right-radius: 0;\r\n    word-wrap: break-word;\r\n    margin-right: 5vw;\r\n}\r\n\r\n.imgWatson {\r\n    border-radius: 5px;\r\n    width: 3rem;\r\n    height: 2rem;\r\n    margin-top: 1.5vh;\r\n    padding: 0;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n\r\n    .divBallon {\r\n        border-radius: 2rem;\r\n        margin: 2vh auto;\r\n        padding: .5rem;\r\n    }\r\n\r\n    .logo {\r\n        padding-right: 0;\r\n    }\r\n\r\n    .imgWatson {\r\n        width: 4rem;\r\n        height: 3rem;\r\n    }\r\n\r\n    .ballon {\r\n        width: 100%;\r\n    }\r\n\r\n    .ballonLeft {\r\n        border-top-left-radius: 0;\r\n        margin-left: 0;\r\n    }\r\n\r\n    .ballonRight {\r\n        border-top-right-radius: 0;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -271,7 +281,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".chat {\r\n    min-width: 95vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -moz-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n    -webkit-justify-content: center;\r\n       -moz-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n    -webkit-align-items: center;\r\n       -moz-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.form {\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -moz-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n    -webkit-flex-flow: column;\r\n       -moz-box-orient: vertical;\r\n       -moz-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-align: center;\r\n    -webkit-align-items: center;\r\n       -moz-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: center;\r\n    -webkit-justify-content: center;\r\n       -moz-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n}\r\n\r\n.panelChat {\r\n    margin-top: 5vh;\r\n    min-height: 70vh;\r\n    border: 1px solid rgba(30,30,120,.7);\r\n    -webkit-border-radius: 5px;\r\n            border-radius: 5px;\r\n    max-height: 70vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    min-width: 95vw;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-track {\r\n    background-color: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar {\r\n    width: 6px;\r\n    background: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-thumb {\r\n    background: rgba(11, 237, 114, .8);\r\n}\r\n\r\n.example-form {\r\n    min-width: 95vw;\r\n    width: 95vw;\r\n    min-height: 10vh;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n@media (min-width: 1024px) {\r\n    \r\n    .chat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .form {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .panelChat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .example-form {\r\n        min-width: 80vw;\r\n        width: 80vw;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".chat {\r\n    min-width: 95vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.form {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n}\r\n\r\n.panelChat {\r\n    margin-top: 5vh;\r\n    min-height: 70vh;\r\n    border: 1px solid rgba(30,30,120,.7);\r\n    border-radius: 5px;\r\n    max-height: 70vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    min-width: 95vw;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-track {\r\n    background-color: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar {\r\n    width: 6px;\r\n    background: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-thumb {\r\n    background: rgba(11, 237, 114, .8);\r\n}\r\n\r\n.example-form {\r\n    min-width: 95vw;\r\n    width: 95vw;\r\n    min-height: 10vh;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n@media (min-width: 1024px) {\r\n    \r\n    .chat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .form {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .panelChat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .example-form {\r\n        min-width: 80vw;\r\n        width: 80vw;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -452,6 +462,79 @@ ChatModel = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/error-user/error-user.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/error-user/error-user.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <md-dialog-content>\n    <strong>{{data}}</strong>\n  </md-dialog-content>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/error-user/error-user.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ErrorUserComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var ErrorUserComponent = (function () {
+    function ErrorUserComponent(thisDialogRef, data) {
+        this.thisDialogRef = thisDialogRef;
+        this.data = data;
+    }
+    ErrorUserComponent.prototype.ngOnInit = function () {
+    };
+    ErrorUserComponent.prototype.onNoClick = function () {
+        this.thisDialogRef.close();
+    };
+    return ErrorUserComponent;
+}());
+ErrorUserComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-error-user',
+        template: __webpack_require__("../../../../../src/app/components/error-user/error-user.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/error-user/error-user.component.css")]
+    }),
+    __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MD_DIALOG_DATA */])),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["g" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["g" /* MdDialogRef */]) === "function" && _a || Object, String])
+], ErrorUserComponent);
+
+var _a;
+//# sourceMappingURL=error-user.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/login/login.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -460,7 +543,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".chat {\r\n    min-width: 100vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -moz-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n    -webkit-justify-content: center;\r\n       -moz-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n    -webkit-align-items: center;\r\n       -moz-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.example-form {\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -moz-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n    -webkit-justify-content: center;\r\n       -moz-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n    -webkit-align-items: center;\r\n       -moz-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    min-width: 90%;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n\r\n    .chat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .example-full-width {\r\n        width: 40%;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".chat {\r\n    min-width: 100vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.progress {\r\n    min-width: 90vw;\r\n    max-width: 90vw;\r\n}\r\n\r\n.example-form {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    min-width: 90%;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n\r\n    .chat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .progress {\r\n        min-width: 40vw;\r\n        max-width: 40vw;\r\n    }\r\n\r\n    .example-full-width {\r\n        width: 40%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -473,7 +556,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar color=\"primary\">\n  <span>Bluehack</span>\n</md-toolbar>\n\n<div class=\"chat\">\n  <form class=\"example-form\">\n    <md-form-field class=\"example-full-width\">\n      <input mdInput #login autofocus\n      placeholder=\"Digite seu nome\" (keypress)=\"eventKeyHandler($event, login.value)\">\n      <md-error *ngIf=\"loginFormControl.hasError('required')\">\n        Nome é <strong>obrigatório</strong>\n      </md-error>\n      <md-error *ngIf=\"loginFormControl.hasError('minlength')\">\n        No mínimo 3 caracteres\n      </md-error>\n    </md-form-field>\n  </form>\n</div>"
+module.exports = "<md-toolbar color=\"primary\">\n  <span>Bluehack</span>\n</md-toolbar>\n\n<div class=\"chat\">\n  <div class=\"example-form\" *ngIf=\"!inProgress\">\n    <md-form-field class=\"example-full-width\">\n      <input mdInput #login autofocus\n      placeholder=\"Digite o seu CPF '000.000.000-00'\" (keypress)=\"eventKeyHandler($event, login.value)\" >\n      <md-icon mdSuffix>mode_edit</md-icon>\n      <md-error *ngIf=\"loginFormControl.hasError('required')\">\n        CPF é <strong>obrigatório</strong>\n      </md-error>\n      <md-error *ngIf=\"loginFormControl.hasError('minlength')\">\n        No mínimo 14 caracteres\n      </md-error>\n    </md-form-field>\n  </div>\n  <div class=\"progress\">\n    <md-progress-bar mode=\"indeterminate\" *ngIf=\"inProgress\"></md-progress-bar>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -485,7 +568,10 @@ module.exports = "<md-toolbar color=\"primary\">\n  <span>Bluehack</span>\n</md-
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_conversation_service__ = __webpack_require__("../../../../../src/app/services/conversation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service__ = __webpack_require__("../../../../../src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_conversation_service__ = __webpack_require__("../../../../../src/app/services/conversation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__error_user_error_user_component__ = __webpack_require__("../../../../../src/app/components/error-user/error-user.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -499,20 +585,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
 var LoginComponent = (function () {
-    function LoginComponent(router) {
+    function LoginComponent(router, userService, dialog) {
         this.router = router;
+        this.userService = userService;
+        this.dialog = dialog;
+        this.inProgress = false;
         this.loginFormControl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', [
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* Validators */].required,
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* Validators */].minLength(3)
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required,
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].minLength(14)
         ]);
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
+    LoginComponent.prototype.openDialog = function (msg) {
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_6__error_user_error_user_component__["a" /* ErrorUserComponent */], {
+            width: '30vw',
+            data: msg
+        });
+    };
     LoginComponent.prototype.eventKeyHandler = function (event, inputValue) {
+        var _this = this;
         if (event.keyCode == 13) {
-            __WEBPACK_IMPORTED_MODULE_3__services_conversation_service__["a" /* ConversationService */].setNome(inputValue);
-            this.router.navigate(['/chat']);
+            this.inProgress = true;
+            this.userService.findUser(inputValue)
+                .subscribe(function (res) {
+                __WEBPACK_IMPORTED_MODULE_5__services_conversation_service__["a" /* ConversationService */].setLogin(res);
+                _this.router.navigate(['/chat']);
+            }, function (err) {
+                _this.inProgress = false;
+                _this.openDialog(err.json().msg);
+            });
         }
     };
     return LoginComponent;
@@ -523,10 +629,10 @@ LoginComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/login/login.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MdDialog */]) === "function" && _c || Object])
 ], LoginComponent);
 
-var _a;
+var _a, _b, _c;
 //# sourceMappingURL=login.component.js.map
 
 /***/ }),
@@ -556,8 +662,8 @@ var AuthGuard = (function () {
         this.router = router;
     }
     AuthGuard.prototype.canActivate = function () {
-        var nome = __WEBPACK_IMPORTED_MODULE_2__services_conversation_service__["a" /* ConversationService */].getNome();
-        if (nome !== '') {
+        var login = __WEBPACK_IMPORTED_MODULE_2__services_conversation_service__["a" /* ConversationService */].getLogin();
+        if (login !== null) {
             return true;
         }
         this.router.navigate(['/']);
@@ -600,14 +706,15 @@ var ConversationService = ConversationService_1 = (function () {
     function ConversationService(_http) {
         this._http = _http;
         // private url: string = `http://localhost:3004/conversation`
+        // private url: string = `http://localhost:3004/conversation/user`
         this.url = "/conversation";
         this.context = {};
     }
-    ConversationService.setNome = function (nome) {
-        this.nome = nome;
+    ConversationService.setLogin = function (login) {
+        this.login = login;
     };
-    ConversationService.getNome = function () {
-        return this.nome;
+    ConversationService.getLogin = function () {
+        return this.login;
     };
     ConversationService.prototype.sendMessage = function (content) {
         var _this = this;
@@ -617,9 +724,8 @@ var ConversationService = ConversationService_1 = (function () {
             input: {
                 text: content.getText
             },
-            // msg: content.getText,
             context: content.getContext,
-            nome: ConversationService_1.getNome().split(' ')[0]
+            login: ConversationService_1.getLogin()
         });
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-type': 'application/json' });
         return this._http.post(this.url, body, { headers: headers })
@@ -630,7 +736,7 @@ var ConversationService = ConversationService_1 = (function () {
     };
     return ConversationService;
 }());
-ConversationService.nome = '';
+ConversationService.login = null;
 ConversationService = ConversationService_1 = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
@@ -638,6 +744,55 @@ ConversationService = ConversationService_1 = __decorate([
 
 var ConversationService_1, _a;
 //# sourceMappingURL=conversation.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/user.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UserService = (function () {
+    function UserService(_http) {
+        this._http = _http;
+        // private url: string = `http://localhost:3004/users/user`
+        this.url = "/users/user";
+    }
+    UserService.prototype.findUser = function (login) {
+        var body = JSON.stringify({
+            login: login,
+        });
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-type': 'application/json' });
+        return this._http.post(this.url, body, { headers: headers })
+            .map(function (res) {
+            return res.json();
+        });
+    };
+    return UserService;
+}());
+UserService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], UserService);
+
+var _a;
+//# sourceMappingURL=user.service.js.map
 
 /***/ }),
 

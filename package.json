@@ -1,13 +1,12 @@
 {
-  "name": "belaalvorada",
+  "name": "Chatbot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "server": "lite-server --baseDir=dist1",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp": "gulp"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -15,16 +14,10 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "nodemailer": "^4.0.1",
+    "mongoose": "^4.11.11",
     "watson-developer-cloud": "^2.39.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean": "^0.3.2",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-usemin": "^0.3.28",
     "lite-server": "^2.3.0"
   }
 }
