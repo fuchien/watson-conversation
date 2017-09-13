@@ -1,0 +1,24 @@
+<md-toolbar color="primary">
+  <span>Bluehack</span>
+</md-toolbar>
+
+<div class="chat">
+  <div class="example-form" *ngIf="!inProgress">
+    <form [formGroup]="myForm" (ngSubmit)="enviarDados(myForm.value, myForm.valid)" class="form">
+      <md-form-field class="example-full-width">
+        <input mdInput #login autofocus formControlName="login" 
+        class="form-control"
+        placeholder="Digite o seu CPF '000.000.000-00'" >
+        <md-icon mdSuffix>mode_edit</md-icon>
+        <md-error *ngIf="myForm.controls.login.invalid">
+          CPF é <strong>obrigatório</strong> no formato '000.000.000-00'
+        </md-error>
+      </md-form-field>
+    </form>
+  </div>
+  <div class="progress">
+    <md-progress-bar mode="indeterminate" *ngIf="inProgress"></md-progress-bar>
+  </div>
+</div>
+<!-- (keypress)="eventKeyHandler($event, login.value)" -->
+<!-- *ngIf="loginFormControl.hasError('required')" -->

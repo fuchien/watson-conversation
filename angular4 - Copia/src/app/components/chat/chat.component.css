@@ -1,0 +1,99 @@
+.chat {
+    min-width: 95vw;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.panelChat {
+    margin-top: 5vh;
+    min-height: 70vh;
+    border: 1px solid rgba(30,30,120,.7);
+    border-radius: 5px;
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 95vw;
+}
+
+.panelChat::-webkit-scrollbar-track {
+    background-color: #1A94C4;
+}
+
+.panelChat::-webkit-scrollbar {
+    width: 6px;
+    background: #1A94C4;
+}
+
+.panelChat::-webkit-scrollbar-thumb {
+    background: rgba(11, 237, 114, .8);
+}
+
+.example-form {
+    min-width: 95vw;
+    width: 95vw;
+    min-height: 10vh;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.settings {
+    display: flex;
+    max-width: 90vw;
+    min-width: 90vw;
+    height: auto;
+    flex-flow: column;
+    margin: 4vh auto;
+}
+
+.panel {
+    margin: 2vh auto;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    
+    .chat {
+        min-width: 80vw;
+    }
+
+    .form {
+        min-width: 80vw;
+    }
+
+    .panelChat {
+        min-width: 80vw;
+    }
+
+    .example-form {
+        min-width: 80vw;
+        width: 80vw;
+    }
+
+    .settings {
+        max-width: 80vw;
+        min-width: 80vw;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .panel {
+        max-width: 35vw;
+        margin: 1vh auto;
+    }
+}
