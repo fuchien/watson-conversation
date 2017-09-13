@@ -1,12 +1,13 @@
 const watson = require('watson-developer-cloud');
+const defaultJson = require('../config/default.json')
 
 function ConversationController() {
 
     this.enviarDados = (req, res, next) => {
 
         const conversation = new watson.ConversationV1({
-            username: '21d73950-9a86-4404-a3da-637ec910e2a4',
-            password: 'mPSElIYvGjBb',
+            username: defaultJson.conversation.username,
+            password: defaultJson.conversation.password,
             version_date: '2017-05-26'
         });
     
@@ -17,7 +18,7 @@ function ConversationController() {
         let login = req.body.login
     
         conversation.message({
-            workspace_id: '4631a90b-ee59-4e3f-bb27-3a2297f297a2',
+            workspace_id: defaultJson.conversation.workspace_id,
             input: text,
             context: context
         },  function(err, response) {

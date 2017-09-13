@@ -3,8 +3,9 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const config = require('./config/database');
+const defaultJson = require('./config/default.json')
 
-const port = process.env.PORT || 3004
+const port = process.env.PORT || defaultJson.environment.port
 const app = express()
 
 // Connect To Database

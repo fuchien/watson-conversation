@@ -11,17 +11,26 @@ function UsersController() {
             {
                 nome: 'Chien',
                 cpf: '111.111.111-11',
-                description: 'Estagiário'
+                description: 'Estagiário',
+                admin: 1
             },
             {
                 nome: 'Julio',
                 cpf: '222.222.222-22',
-                description: 'B6'
+                description: 'B6',
+                admin: 1
             },
             {
                 nome: 'Eduardo',
                 cpf: '333.333.333-33',
-                description: 'Estagiário'
+                description: 'Estagiário',
+                admin: 1
+            },
+            {
+                nome: 'Guilherme',
+                cpf: '444.444.444-44',
+                description: 'Estagiário',
+                admin: 0
             }
         ]
 
@@ -51,11 +60,11 @@ function UsersController() {
     
         newUser.save((err, newuser) => {
             if (err) {
-                    return res.status(500).json({
-                        title: 'An error occurred',
-                        error: err
-                    });
-                }
+                return res.status(500).json({
+                    title: 'An error occurred',
+                    error: err
+                });
+            }
             res.status(200).json(newuser)
         })
     }
