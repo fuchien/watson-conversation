@@ -1,0 +1,31 @@
+<md-tab-group>
+  <md-tab label="Settings" *ngIf="isAdmin">
+    <div class="settings">
+      <div class="panel">
+        <app-settings></app-settings>
+      </div>
+
+      <div class="panel">
+        <app-settings></app-settings>
+      </div>
+    </div>
+  </md-tab>
+  <md-tab label="Chat">
+    <div class="chat">
+      <div class="form">
+        <div id="divOverflow" class="panel-body panelChat">
+          <div #divBallons></div>
+        </div>
+    
+        <form class="example-form">
+          <md-form-field class="example-full-width">
+            <input mdInput #message maxlength="50" autofocus [(ngModel)]="dialogMessage" class="form-control"
+            name="message" placeholder="Message" (keypress)="eventKeyHandler($event, message.value)">
+            <md-hint align="start"><strong>Tecle ENTER para enviar a mensagem</strong> </md-hint>
+            <md-hint align="end">{{message.value.length}} / 50</md-hint>
+          </md-form-field>
+        </form>
+      </div>
+    </div>
+  </md-tab>
+</md-tab-group>

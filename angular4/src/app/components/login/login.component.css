@@ -1,0 +1,46 @@
+.chat {
+    min-width: 100vw;
+    min-height: 85vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress {
+    min-width: 90vw;
+    max-width: 90vw;
+}
+
+.example-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 90%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+
+    .chat {
+        min-width: 80vw;
+    }
+
+    .progress {
+        min-width: 40vw;
+        max-width: 40vw;
+    }
+
+    .example-full-width {
+        width: 40%;
+    }
+}
