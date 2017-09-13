@@ -148,19 +148,20 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["l" /* MdNativeDateModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["m" /* MdNativeDateModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["c" /* MdCardModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["i" /* MdIconModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["f" /* MdDialogModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["o" /* MdTabsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["m" /* MdProgressBarModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["n" /* MdSelectModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["h" /* MdExpansionModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["d" /* MdDatepickerModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["p" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["d" /* MdCheckboxModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["j" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["g" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["p" /* MdTabsModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["n" /* MdProgressBarModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["o" /* MdSelectModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["i" /* MdExpansionModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["e" /* MdDatepickerModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["q" /* MdToolbarModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["j" /* MdInputModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["k" /* MdMenuModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["k" /* MdInputModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["l" /* MdMenuModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes)
         ],
@@ -282,7 +283,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".chat {\r\n    min-width: 95vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.form {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n}\r\n\r\n.panelChat {\r\n    margin-top: 5vh;\r\n    min-height: 70vh;\r\n    border: 1px solid rgba(30,30,120,.7);\r\n    border-radius: 5px;\r\n    max-height: 70vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    min-width: 95vw;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-track {\r\n    background-color: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar {\r\n    width: 6px;\r\n    background: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-thumb {\r\n    background: rgba(11, 237, 114, .8);\r\n}\r\n\r\n.example-form {\r\n    min-width: 95vw;\r\n    width: 95vw;\r\n    min-height: 10vh;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n.settings {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    max-width: 90vw;\r\n    min-width: 90vw;\r\n    height: auto;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    margin: 4vh auto;\r\n}\r\n\r\n.panel {\r\n    margin: 2vh auto;\r\n}\r\n\r\n@media (min-width: 1024px) {\r\n    \r\n    .chat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .form {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .panelChat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .example-form {\r\n        min-width: 80vw;\r\n        width: 80vw;\r\n    }\r\n\r\n    .settings {\r\n        max-width: 80vw;\r\n        min-width: 80vw;\r\n        -webkit-box-orient: horizontal;\r\n        -webkit-box-direction: normal;\r\n            -ms-flex-flow: row wrap;\r\n                flex-flow: row wrap;\r\n        -webkit-box-pack: center;\r\n            -ms-flex-pack: center;\r\n                justify-content: center;\r\n    }\r\n\r\n    .panel {\r\n        max-width: 35vw;\r\n        margin: 1vh auto;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".chat {\r\n    min-width: 95vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.form {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n}\r\n\r\n.panelChat {\r\n    margin-top: 5vh;\r\n    min-height: 70vh;\r\n    border: 1px solid rgba(30,30,120,.7);\r\n    border-radius: 5px;\r\n    max-height: 70vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    min-width: 95vw;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-track {\r\n    background-color: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar {\r\n    width: 6px;\r\n    background: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-thumb {\r\n    background: rgba(11, 237, 114, .8);\r\n}\r\n\r\n.example-form {\r\n    min-width: 95vw;\r\n    width: 95vw;\r\n    min-height: 10vh;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n.settings {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    max-width: 90vw;\r\n    min-width: 90vw;\r\n    height: auto;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    margin: 4vh auto;\r\n}\r\n\r\n.panel {\r\n    margin: 2vh auto;\r\n}\r\n\r\n.action {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n@media (min-width: 1024px) {\r\n    \r\n    .chat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .form {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .panelChat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .example-form {\r\n        min-width: 80vw;\r\n        width: 80vw;\r\n    }\r\n\r\n    .settings {\r\n        max-width: 80vw;\r\n        min-width: 80vw;\r\n        -webkit-box-orient: horizontal;\r\n        -webkit-box-direction: normal;\r\n            -ms-flex-flow: row wrap;\r\n                flex-flow: row wrap;\r\n        -webkit-box-pack: center;\r\n            -ms-flex-pack: center;\r\n                justify-content: center;\r\n    }\r\n\r\n    .panel {\r\n        max-width: 35vw;\r\n        margin: 1vh auto;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -295,7 +296,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/chat/chat.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-tab-group>\n  <md-tab label=\"Settings\" *ngIf=\"isAdmin\">\n    <div class=\"settings\">\n      <div class=\"panel\">\n        <md-expansion-panel>\n          <md-expansion-panel-header>\n            <md-panel-title>\n              Tone Analyzer\n            </md-panel-title>\n            <md-panel-description>\n              Coloque os seus credenciais\n            </md-panel-description>\n          </md-expansion-panel-header>\n          \n          <md-form-field>\n            <input mdInput placeholder=\"username\">\n          </md-form-field>\n          \n          <md-form-field>\n            <input mdInput placeholder=\"password\">\n          </md-form-field>\n\n          <md-action-row>\n            <button md-button color=\"primary\">ENVIAR</button>\n          </md-action-row>\n        </md-expansion-panel>\n      </div>\n\n      <div class=\"panel\">\n        <md-expansion-panel>\n          <md-expansion-panel-header>\n            <md-panel-title>\n              Tone Analyzer\n            </md-panel-title>\n            <md-panel-description>\n              Coloque os seus credenciais\n            </md-panel-description>\n          </md-expansion-panel-header>\n          \n          <md-form-field>\n            <input mdInput placeholder=\"username\">\n          </md-form-field>\n          \n          <md-form-field>\n            <input mdInput placeholder=\"password\">\n          </md-form-field>\n\n          <md-action-row>\n            <button md-button color=\"primary\">ENVIAR</button>\n          </md-action-row>\n        </md-expansion-panel>\n      </div>\n    </div>\n  </md-tab>\n  <md-tab label=\"Chat\">\n    <div class=\"chat\">\n      <div class=\"form\">\n        <div id=\"divOverflow\" class=\"panel-body panelChat\">\n          <div #divBallons></div>\n        </div>\n    \n        <form class=\"example-form\">\n          <md-form-field class=\"example-full-width\">\n            <input mdInput #message maxlength=\"50\" autofocus [(ngModel)]=\"dialogMessage\" class=\"form-control\"\n            name=\"message\" placeholder=\"Message\" (keypress)=\"eventKeyHandler($event, message.value)\">\n            <md-hint align=\"start\"><strong>Tecle ENTER para enviar a mensagem</strong> </md-hint>\n            <md-hint align=\"end\">{{message.value.length}} / 50</md-hint>\n          </md-form-field>\n        </form>\n      </div>\n    </div>\n  </md-tab>\n</md-tab-group>\n\n"
+module.exports = "<md-tab-group>\n  <md-tab label=\"Settings\" *ngIf=\"isAdmin\">\n    <div class=\"settings\">\n      <div class=\"panel\">\n        <md-expansion-panel>\n          <md-expansion-panel-header>\n            <md-panel-title>\n              Tone Analyzer\n            </md-panel-title>\n            <md-panel-description>\n              Coloque os seus credenciais\n            </md-panel-description>\n          </md-expansion-panel-header>\n          \n          <md-form-field>\n            <input mdInput placeholder=\"username\">\n          </md-form-field>\n          \n          <md-form-field>\n            <input mdInput placeholder=\"password\">\n          </md-form-field>\n\n          <md-action-row class=\"action\">\n            <md-checkbox>Salvar</md-checkbox>\n            <button md-button color=\"primary\">ENVIAR</button>\n          </md-action-row>\n        </md-expansion-panel>\n      </div>\n\n      <div class=\"panel\">\n        <md-expansion-panel>\n          <md-expansion-panel-header>\n            <md-panel-title>\n              Tone Analyzer\n            </md-panel-title>\n            <md-panel-description>\n              Coloque os seus credenciais\n            </md-panel-description>\n          </md-expansion-panel-header>\n          \n          <md-form-field>\n            <input mdInput placeholder=\"username\">\n          </md-form-field>\n          \n          <md-form-field>\n            <input mdInput placeholder=\"password\">\n          </md-form-field>\n\n          <md-action-row>\n            <button md-button color=\"primary\">ENVIAR</button>\n          </md-action-row>\n        </md-expansion-panel>\n      </div>\n    </div>\n  </md-tab>\n  <md-tab label=\"Chat\">\n    <div class=\"chat\">\n      <div class=\"form\">\n        <div id=\"divOverflow\" class=\"panel-body panelChat\">\n          <div #divBallons></div>\n        </div>\n    \n        <form class=\"example-form\">\n          <md-form-field class=\"example-full-width\">\n            <input mdInput #message maxlength=\"50\" autofocus [(ngModel)]=\"dialogMessage\" class=\"form-control\"\n            name=\"message\" placeholder=\"Message\" (keypress)=\"eventKeyHandler($event, message.value)\">\n            <md-hint align=\"start\"><strong>Tecle ENTER para enviar a mensagem</strong> </md-hint>\n            <md-hint align=\"end\">{{message.value.length}} / 50</md-hint>\n          </md-form-field>\n        </form>\n      </div>\n    </div>\n  </md-tab>\n</md-tab-group>\n\n"
 
 /***/ }),
 
@@ -531,7 +532,7 @@ ErrorUserComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/components/error-user/error-user.component.css")]
     }),
     __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MD_DIALOG_DATA */])),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["g" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["g" /* MdDialogRef */]) === "function" && _a || Object, String])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MdDialogRef */]) === "function" && _a || Object, String])
 ], ErrorUserComponent);
 
 var _a;
@@ -547,7 +548,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".chat {\r\n    min-width: 100vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.progress {\r\n    min-width: 90vw;\r\n    max-width: 90vw;\r\n}\r\n\r\n.example-form {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    min-width: 90%;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n\r\n    .chat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .progress {\r\n        min-width: 40vw;\r\n        max-width: 40vw;\r\n    }\r\n\r\n    .example-full-width {\r\n        width: 40%;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".chat {\r\n    min-width: 100vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.progress {\r\n    min-width: 90vw;\r\n    max-width: 90vw;\r\n}\r\n\r\n.example-form {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    min-width: 90%;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n.form {\r\n    width: 100%;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n\r\n    .chat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .progress {\r\n        min-width: 40vw;\r\n        max-width: 40vw;\r\n    }\r\n\r\n    .example-full-width {\r\n        width: 40%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -560,7 +561,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar color=\"primary\">\n  <span>Bluehack</span>\n</md-toolbar>\n\n<div class=\"chat\">\n  <div class=\"example-form\" *ngIf=\"!inProgress\">\n    <md-form-field class=\"example-full-width\">\n      <input mdInput #login autofocus\n      placeholder=\"Digite o seu CPF '000.000.000-00'\" (keypress)=\"eventKeyHandler($event, login.value)\" >\n      <md-icon mdSuffix>mode_edit</md-icon>\n      <md-error *ngIf=\"loginFormControl.hasError('required')\">\n        CPF é <strong>obrigatório</strong>\n      </md-error>\n      <md-error *ngIf=\"loginFormControl.hasError('minlength')\">\n        No mínimo 14 caracteres\n      </md-error>\n    </md-form-field>\n  </div>\n  <div class=\"progress\">\n    <md-progress-bar mode=\"indeterminate\" *ngIf=\"inProgress\"></md-progress-bar>\n  </div>\n</div>"
+module.exports = "<md-toolbar color=\"primary\">\n  <span>Bluehack</span>\n</md-toolbar>\n\n<div class=\"chat\">\n  <div class=\"example-form\" *ngIf=\"!inProgress\">\n    <form [formGroup]=\"myForm\" (ngSubmit)=\"enviarDados(myForm.value, myForm.valid)\" class=\"form\">\n      <md-form-field class=\"example-full-width\">\n        <input mdInput #login autofocus formControlName=\"login\" \n        class=\"form-control\"\n        placeholder=\"Digite o seu CPF '000.000.000-00'\" >\n        <md-icon mdSuffix>mode_edit</md-icon>\n        <md-error *ngIf=\"myForm.controls.login.invalid\">\n          CPF é <strong>obrigatório</strong> no formato '000.000.000-00'\n        </md-error>\n      </md-form-field>\n    </form>\n  </div>\n  <div class=\"progress\">\n    <md-progress-bar mode=\"indeterminate\" *ngIf=\"inProgress\"></md-progress-bar>\n  </div>\n</div>\n<!-- (keypress)=\"eventKeyHandler($event, login.value)\" -->\n<!-- *ngIf=\"loginFormControl.hasError('required')\" -->"
 
 /***/ }),
 
@@ -592,16 +593,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+var CPF_REGEX = /^([0-9]){3}\.([0-9]){3}\.([0-9]){3}-([0-9]){2}$/;
 var LoginComponent = (function () {
-    function LoginComponent(router, userService, dialog) {
+    function LoginComponent(router, userService, dialog, fb) {
         this.router = router;
         this.userService = userService;
         this.dialog = dialog;
+        this.fb = fb;
         this.inProgress = false;
-        this.loginFormControl = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]('', [
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].required,
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].minLength(14)
-        ]);
+        this.login = '';
+        this.myForm = fb.group({
+            'login': [null, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].pattern(CPF_REGEX)]
+        });
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
@@ -611,11 +614,12 @@ var LoginComponent = (function () {
             data: msg
         });
     };
-    LoginComponent.prototype.eventKeyHandler = function (event, inputValue) {
+    LoginComponent.prototype.enviarDados = function (post, isValid) {
         var _this = this;
-        if (event.keyCode == 13) {
+        if (isValid) {
+            this.login = post.login;
             this.inProgress = true;
-            this.userService.findUser(inputValue)
+            this.userService.findUser(this.login)
                 .subscribe(function (res) {
                 __WEBPACK_IMPORTED_MODULE_5__services_conversation_service__["a" /* ConversationService */].setLogin(res);
                 _this.router.navigate(['/chat']);
@@ -633,10 +637,10 @@ LoginComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/login/login.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MdDialog */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["f" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["f" /* MdDialog */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormBuilder */]) === "function" && _d || Object])
 ], LoginComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=login.component.js.map
 
 /***/ }),
@@ -774,7 +778,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UserService = (function () {
     function UserService(_http) {
         this._http = _http;
-        // private url: string = `http://localhost:3004/users/`
+        // private url: string = `http://localhost:3004/users/user`
         this.url = "/users/user";
     }
     UserService.prototype.findUser = function (login) {
