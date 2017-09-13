@@ -11,37 +11,39 @@ import {
   MdCheckboxModule,
   MdSelectModule,
   MdProgressBarModule,
+  MdProgressSpinnerModule,
   MdDatepickerModule,
   MdToolbarModule,
   MdTabsModule,
   MdDialogModule,
+  MdSlideToggleModule,
   MdExpansionModule,
   MdIconModule,
   MdButtonModule,
   MdInputModule,
   MdMenuModule } from '@angular/material'
-import 'hammerjs'
-
-import { AppComponent } from './app.component';
-import { ChatComponent } from './components/chat/chat.component';
-
-import { UserService } from './services/user.service';
-import { ConversationService } from './services/conversation.service';
-import { BallonsComponent } from './components/ballons/ballons.component';
-import { LoginComponent } from './components/login/login.component';
-import { ErrorUserComponent } from './components/error-user/error-user.component';
-
-import { AuthGuard } from './guards/auth.guards';
-import { SettingsComponent } from './components/chat/settings/settings.component';
+  import 'hammerjs'
+  
+  import { AppComponent } from './app.component';
+  import { ChatComponent } from './components/chat/chat.component';
+  import { BallonsComponent } from './components/ballons/ballons.component';
+  import { SettingsToneComponent } from './components/chat/settings/toneAnalyzer/settings.component.tone';
+  import { LoginComponent } from './components/login/login.component';
+  import { ErrorUserComponent } from './components/error-user/error-user.component';
+  
+  import { UserService } from './services/UserService/user.service';
+  import { ConversationService } from './services/ConversationService/conversation.service';
+  import { ToneService } from './services/ToneService/tone.service';
+  import { AuthGuard } from './guards/auth.guards';
   
   const appRoutes: Routes = [
     {
       path: '',
       redirectTo: 'login',
-        pathMatch: 'full'
+      pathMatch: 'full'
     },
     {
-        path: 'login',
+      path: 'login',
         component: LoginComponent
     },
     {
@@ -58,7 +60,7 @@ import { SettingsComponent } from './components/chat/settings/settings.component
     BallonsComponent,
     LoginComponent,
     ErrorUserComponent,
-    SettingsComponent
+    SettingsToneComponent
   ],
   imports: [
     BrowserModule,
@@ -68,8 +70,10 @@ import { SettingsComponent } from './components/chat/settings/settings.component
     MdNativeDateModule,
     MdCardModule,
     MdCheckboxModule,
+    MdSlideToggleModule,
     MdIconModule,
     MdDialogModule,
+    MdProgressSpinnerModule,
     MdTabsModule,
     MdProgressBarModule,
     MdSelectModule,
@@ -89,7 +93,8 @@ import { SettingsComponent } from './components/chat/settings/settings.component
   providers: [
     ConversationService,
     AuthGuard,
-    UserService
+    UserService,
+    ToneService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,35 @@
+<md-expansion-panel>
+  <md-expansion-panel-header>
+    <md-panel-title>
+      Tone Analyzer
+    </md-panel-title>
+    <md-panel-description>
+      Coloque os seus credenciais
+    </md-panel-description>
+  </md-expansion-panel-header>
+  
+  <form [formGroup]="myForm" (ngSubmit)="enviarCredenciais(myForm.value, myForm.valid)">
+    <md-form-field>
+      <input mdInput placeholder="username" formControlName="username" 
+      class="form-control" >
+      <md-error *ngIf="myForm.controls.username.invalid">
+        username é <strong>obrigatório</strong>
+      </md-error>
+    </md-form-field>
+    
+    <md-form-field>
+      <input mdInput placeholder="password" formControlName="password" 
+      class="form-control" >
+      <md-error *ngIf="myForm.controls.password.invalid">
+        password é <strong>obrigatório</strong>
+      </md-error>
+    </md-form-field>
+
+    <md-action-row class="action">
+      <!-- <md-checkbox>Salvar</md-checkbox> -->
+      <md-slide-toggle color="primary" (click)="saveOrNot()">{{ isSave ? 'Save!' : 'Not save' }}</md-slide-toggle>
+      <button md-button color="primary" *ngIf="!enviando">ENVIAR</button>
+      <md-spinner class="spinner" *ngIf="enviando"></md-spinner>
+    </md-action-row>
+  </form>
+</md-expansion-panel>

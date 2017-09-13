@@ -3,8 +3,8 @@ import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MdDialog} from '@angular/material';
 
-import { UserService } from './../../services/user.service';
-import { ConversationService } from './../../services/conversation.service';
+import { UserService } from './../../services/UserService/user.service';
+import { ConversationService } from './../../services/ConversationService/conversation.service';
 
 import { ErrorUserComponent } from '../error-user/error-user.component';
 
@@ -59,12 +59,4 @@ export class LoginComponent implements OnInit {
         })
     }
   }
-
-  // private eventKeyHandler(event, inputValue): void {
-
-  //   if (event.keyCode == 13) {
-
-      
-  //   }
-  // }
 }

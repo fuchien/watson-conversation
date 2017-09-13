@@ -6,7 +6,7 @@ import { Component, OnInit,
   AfterViewInit
 } from '@angular/core';
 
-import { ConversationService } from './../../services/conversation.service';
+import { ConversationService } from './../../services/ConversationService/conversation.service';
 import { BallonsComponent } from './../ballons/ballons.component';
 import { ChatModel } from "./chat.model"
 

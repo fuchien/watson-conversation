@@ -1,4 +1,3 @@
-const watson = require('watson-developer-cloud');
 const User = require('../models/user')
 
 function UsersController() {
