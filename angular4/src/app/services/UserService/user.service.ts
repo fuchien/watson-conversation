@@ -6,12 +6,18 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class UserService {
 
-  // private url: string = `http://localhost:3004/users/user`
-  private url: string = `/users/user`
+  private url: string = `http://localhost:3004/users`
+  // private url: string = `/users`
 
   constructor(
     private _http: Http
   ) { }
+
+  user(cpf) {
+
+    return this._http.get(this.url + `/${cpf}`)
+      .map((res: Response) => res.json())
+  }
 
   findUser(login) {
 

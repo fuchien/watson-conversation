@@ -18,7 +18,7 @@ const CPF_REGEX = /^([0-9]){3}\.([0-9]){3}\.([0-9]){3}-([0-9]){2}$/;
 export class LoginComponent implements OnInit {
 
   private inProgress: boolean = false
-  private login: string = ''
+  private cpf: string = ''
   private myForm: FormGroup
 
   constructor(
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.myForm = fb.group({
-      'login': [null, Validators.pattern(CPF_REGEX)]
+      'cpf': [null, Validators.pattern(CPF_REGEX)]
     })
   }
 
@@ -46,17 +46,26 @@ export class LoginComponent implements OnInit {
 
     if (isValid) {
 
-      this.login = post.login
+      this.cpf = post.cpf
       this.inProgress = true
 
-      this.userService.findUser(this.login)
+      this.userService.user(this.cpf)
         .subscribe(res => {
-          ConversationService.setLogin(res)
-          this.router.navigate(['/chat'])
-        }, err => {
-          this.inProgress = false
-          this.openDialog(err.json().msg)
-        })
+            ConversationService.setLogin(res)
+            this.router.navigate(['/chat'])
+          }, err => {
+            this.inProgress = false
+            this.openDialog(err.json().msg)
+          })
+
+      // this.userService.findUser(this.login)
+      //   .subscribe(res => {
+      //     ConversationService.setLogin(res)
+      //     this.router.navigate(['/chat'])
+      //   }, err => {
+      //     this.inProgress = false
+      //     this.openDialog(err.json().msg)
+      //   })
     }
   }
 }

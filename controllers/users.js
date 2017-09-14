@@ -6,42 +6,12 @@ function UsersController() {
 
     this.pegarUser = (req, res, next) => {
 
-        let cpf = req.body.login
-
-        let users = [
-            {
-                nome: 'Chien',
-                cpf: '111.111.111-11',
-                description: 'Estagiário',
-                admin: 1
-            },
-            {
-                nome: 'Julio',
-                cpf: '222.222.222-22',
-                description: 'B6',
-                admin: 1
-            },
-            {
-                nome: 'Eduardo',
-                cpf: '333.333.333-33',
-                description: 'Estagiário',
-                admin: 1
-            },
-            {
-                nome: 'Guilherme',
-                cpf: '444.444.444-44',
-                description: 'Estagiário',
-                admin: 0
-            }
-        ]
-
-        // let user = users.filter(user => user.cpf === login)
         const Users = datasource.models.Users
-        Users.findOne({where: {cpf: req.body.login}})
+        Users.findOne({where: {cpf: req.params.cpf}})
             .then(user => {
                 if (user == undefined || user == null) {
                     res.status(400).json({
-                        msg: 'Usuário não existe.',
+                        msg: 'Usuário não encontrado!',
                         error: error
                     });
 
@@ -52,17 +22,6 @@ function UsersController() {
             .catch(err => {
                 res.status(400).json({msg: 'Usuário não encontrado!'})
             })
-
-        // if (user.length == 0 || user == null) {
-        //     res.status(404).json({msg: 'Usuário não encontrado!'})
-        // } else {
-        //     res.status(200).json(user)
-        // }
-
-        // User.findOne({cpf: login}, (err,obj) => {
-
-            // res.status(200).json(user)
-        // })
     }
 
     this.salvarUser = (req, res, next) => {
@@ -76,8 +35,7 @@ function UsersController() {
         }).then(user => {
             res.status(200).json(user.dataValues)
         }).catch(err => {
-
-            res.status(412).json(err)
+            res.status(400).json(err)
         })
 
         // let newUser = new User({

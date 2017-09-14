@@ -588,7 +588,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/error-user/error-user.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <md-dialog-content>\n    <strong>{{data}}</strong>\n  </md-dialog-content>\n</div>"
+module.exports = "<div>\n  <md-dialog-content>\n    <strong>{{_injectedValue}}</strong>\n  </md-dialog-content>\n</div>"
 
 /***/ }),
 
@@ -617,6 +617,10 @@ var ErrorUserComponent = (function () {
     function ErrorUserComponent(thisDialogRef, data) {
         this.thisDialogRef = thisDialogRef;
         this.data = data;
+        this._injectedValue = 'Usuário não existe!';
+        if (this.data) {
+            this._injectedValue = this.data;
+        }
     }
     ErrorUserComponent.prototype.ngOnInit = function () {
     };
@@ -661,7 +665,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar color=\"primary\">\n  <span>Bluehack</span>\n</md-toolbar>\n\n<div class=\"chat\">\n  <div class=\"example-form\" *ngIf=\"!inProgress\">\n    <form [formGroup]=\"myForm\" (ngSubmit)=\"enviarDados(myForm.value, myForm.valid)\" class=\"form\">\n      <md-form-field class=\"example-full-width\">\n        <input mdInput #login autofocus formControlName=\"login\" \n        class=\"form-control\"\n        placeholder=\"Digite o seu CPF '000.000.000-00'\" >\n        <md-icon mdSuffix>mode_edit</md-icon>\n        <md-error *ngIf=\"myForm.controls.login.invalid\">\n          CPF é <strong>obrigatório</strong> no formato '000.000.000-00'\n        </md-error>\n      </md-form-field>\n    </form>\n  </div>\n  <div class=\"progress\">\n    <md-progress-bar mode=\"indeterminate\" *ngIf=\"inProgress\"></md-progress-bar>\n  </div>\n</div>\n<!-- (keypress)=\"eventKeyHandler($event, login.value)\" -->\n<!-- *ngIf=\"loginFormControl.hasError('required')\" -->"
+module.exports = "<md-toolbar color=\"primary\">\n  <span>Bluehack</span>\n</md-toolbar>\n\n<div class=\"chat\">\n  <div class=\"example-form\" *ngIf=\"!inProgress\">\n    <form [formGroup]=\"myForm\" (ngSubmit)=\"enviarDados(myForm.value, myForm.valid)\" class=\"form\">\n      <md-form-field class=\"example-full-width\">\n        <input mdInput #cpf autofocus formControlName=\"cpf\" \n        class=\"form-control\"\n        placeholder=\"Digite o seu CPF '000.000.000-00'\" >\n        <md-icon mdSuffix>mode_edit</md-icon>\n        <md-error *ngIf=\"myForm.controls.cpf.invalid\">\n          CPF é <strong>obrigatório</strong> no formato '000.000.000-00'\n        </md-error>\n      </md-form-field>\n    </form>\n  </div>\n  <div class=\"progress\">\n    <md-progress-bar mode=\"indeterminate\" *ngIf=\"inProgress\"></md-progress-bar>\n  </div>\n</div>\n<!-- (keypress)=\"eventKeyHandler($event, login.value)\" -->\n<!-- *ngIf=\"loginFormControl.hasError('required')\" -->"
 
 /***/ }),
 
@@ -701,9 +705,9 @@ var LoginComponent = (function () {
         this.dialog = dialog;
         this.fb = fb;
         this.inProgress = false;
-        this.login = '';
+        this.cpf = '';
         this.myForm = fb.group({
-            'login': [null, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].pattern(CPF_REGEX)]
+            'cpf': [null, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].pattern(CPF_REGEX)]
         });
     }
     LoginComponent.prototype.ngOnInit = function () {
@@ -717,9 +721,9 @@ var LoginComponent = (function () {
     LoginComponent.prototype.enviarDados = function (post, isValid) {
         var _this = this;
         if (isValid) {
-            this.login = post.login;
+            this.cpf = post.cpf;
             this.inProgress = true;
-            this.userService.findUser(this.login)
+            this.userService.user(this.cpf)
                 .subscribe(function (res) {
                 __WEBPACK_IMPORTED_MODULE_5__services_ConversationService_conversation_service__["a" /* ConversationService */].setLogin(res);
                 _this.router.navigate(['/chat']);
@@ -727,6 +731,14 @@ var LoginComponent = (function () {
                 _this.inProgress = false;
                 _this.openDialog(err.json().msg);
             });
+            // this.userService.findUser(this.login)
+            //   .subscribe(res => {
+            //     ConversationService.setLogin(res)
+            //     this.router.navigate(['/chat'])
+            //   }, err => {
+            //     this.inProgress = false
+            //     this.openDialog(err.json().msg)
+            //   })
         }
     };
     return LoginComponent;
@@ -813,8 +825,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ConversationService = ConversationService_1 = (function () {
     function ConversationService(_http) {
         this._http = _http;
-        // private url: string = `http://localhost:3004/conversation`
-        this.url = "/conversation";
+        this.url = "http://localhost:3004/conversation";
+        // private url: string = `/conversation`
         this.context = {};
     }
     ConversationService.setLogin = function (login) {
@@ -876,10 +888,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ToneService = (function () {
+    // private url: string = `/apiswatson/tone`
     function ToneService(_http) {
         this._http = _http;
-        // private url: string = `http://localhost:3004/apiswatson/tone`
-        this.url = "/apiswatson/tone";
+        this.url = "http://localhost:3004/apiswatson/tone";
     }
     ToneService.prototype.enviarCredenciais = function (credenciais) {
         var body = JSON.stringify({
@@ -927,11 +939,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var UserService = (function () {
+    // private url: string = `/users`
     function UserService(_http) {
         this._http = _http;
-        // private url: string = `http://localhost:3004/users/user`
-        this.url = "/users/user";
+        this.url = "http://localhost:3004/users";
     }
+    UserService.prototype.user = function (cpf) {
+        return this._http.get(this.url + ("/" + cpf))
+            .map(function (res) { return res.json(); });
+    };
     UserService.prototype.findUser = function (login) {
         var body = JSON.stringify({
             login: login,

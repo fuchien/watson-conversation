@@ -6,8 +6,8 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class ToneService {
 
-  // private url: string = `http://localhost:3004/apiswatson/tone`
-  private url: string = `/apiswatson/tone`
+  private url: string = `http://localhost:3004/apiswatson/tone`
+  // private url: string = `/apiswatson/tone`
 
   constructor(
     private _http: Http

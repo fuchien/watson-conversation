@@ -5,6 +5,6 @@ const router = express.Router()
 const UsersController = require('../controllers/users')()
 
 router.post('/', UsersController.salvarUser.bind(UsersController))
-router.post('/user', UsersController.pegarUser.bind(UsersController))
+router.get('/:cpf', UsersController.pegarUser.bind(UsersController))
 
 module.exports = router
