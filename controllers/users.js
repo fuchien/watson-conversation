@@ -1,10 +1,12 @@
-const User = require('../models/user')
+// const User = require('../models/user')
+// const app = require('../app')
+const datasource = require('../config/datasource')()
 
 function UsersController() {
 
     this.pegarUser = (req, res, next) => {
 
-        let login = req.body.login
+        let cpf = req.body.login
 
         let users = [
             {
@@ -33,13 +35,29 @@ function UsersController() {
             }
         ]
 
-        let user = users.filter(user => user.cpf === login)
+        // let user = users.filter(user => user.cpf === login)
+        const Users = datasource.models.Users
+        Users.findOne({where: {cpf: req.body.login}})
+            .then(user => {
+                if (user == undefined || user == null) {
+                    res.status(400).json({
+                        msg: 'Usuário não existe.',
+                        error: error
+                    });
 
-        if (user.length == 0 || user == null) {
-            res.status(404).json({msg: 'Usuário não encontrado!'})
-        } else {
-            res.status(200).json(user)
-        }
+                    return;
+                }
+                res.status(200).json(user.dataValues)
+            })
+            .catch(err => {
+                res.status(400).json({msg: 'Usuário não encontrado!'})
+            })
+
+        // if (user.length == 0 || user == null) {
+        //     res.status(404).json({msg: 'Usuário não encontrado!'})
+        // } else {
+        //     res.status(200).json(user)
+        // }
 
         // User.findOne({cpf: login}, (err,obj) => {
 
@@ -49,23 +67,34 @@ function UsersController() {
 
     this.salvarUser = (req, res, next) => {
 
-        console.log(req.body)
-
-        let newUser = new User({
+        const Users = datasource.models.Users
+        Users.create({
             nome: req.body.nome,
             cpf: req.body.cpf,
-            description: req.body.description
+            descricao: req.body.descricao,
+            admin: req.body.admin
+        }).then(user => {
+            res.status(200).json(user.dataValues)
+        }).catch(err => {
+
+            res.status(412).json(err)
         })
+
+        // let newUser = new User({
+        //     nome: req.body.nome,
+        //     cpf: req.body.cpf,
+        //     description: req.body.description
+        // })
     
-        newUser.save((err, newuser) => {
-            if (err) {
-                return res.status(500).json({
-                    title: 'An error occurred',
-                    error: err
-                });
-            }
-            res.status(200).json(newuser)
-        })
+        // newUser.save((err, newuser) => {
+        //     if (err) {
+        //         return res.status(500).json({
+        //             title: 'An error occurred',
+        //             error: err
+        //         });
+        //     }
+        //     res.status(200).json(newuser)
+        // })
     }
 }
 

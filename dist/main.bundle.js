@@ -340,7 +340,7 @@ var ChatComponent = (function () {
     }
     ChatComponent.prototype.ngOnInit = function () {
         var _this = this;
-        if (__WEBPACK_IMPORTED_MODULE_1__services_ConversationService_conversation_service__["a" /* ConversationService */].getLogin()[0].admin)
+        if (__WEBPACK_IMPORTED_MODULE_1__services_ConversationService_conversation_service__["a" /* ConversationService */].getLogin().admin === '1')
             this.isAdmin = true;
         var chatData = new __WEBPACK_IMPORTED_MODULE_3__chat_model__["a" /* ChatModel */]();
         chatData.setContext = {};
@@ -629,10 +629,10 @@ ErrorUserComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-error-user',
         template: __webpack_require__("../../../../../src/app/components/error-user/error-user.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/error-user/error-user.component.css")]
+        styles: [__webpack_require__("../../../../../src/app/components/error-user/error-user.component.css")],
     }),
     __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MD_DIALOG_DATA */])),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MdDialogRef */]) === "function" && _a || Object, String])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MdDialogRef */]) === "function" && _a || Object, Object])
 ], ErrorUserComponent);
 
 var _a;
@@ -813,8 +813,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ConversationService = ConversationService_1 = (function () {
     function ConversationService(_http) {
         this._http = _http;
-        this.url = "http://localhost:3004/conversation";
-        // private url: string = `/conversation`
+        // private url: string = `http://localhost:3004/conversation`
+        this.url = "/conversation";
         this.context = {};
     }
     ConversationService.setLogin = function (login) {
@@ -876,10 +876,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ToneService = (function () {
-    // private url: string = `/apiswatson/tone`
     function ToneService(_http) {
         this._http = _http;
-        this.url = "http://localhost:3004/apiswatson/tone";
+        // private url: string = `http://localhost:3004/apiswatson/tone`
+        this.url = "/apiswatson/tone";
     }
     ToneService.prototype.enviarCredenciais = function (credenciais) {
         var body = JSON.stringify({
@@ -927,10 +927,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var UserService = (function () {
-    // private url: string = `/users/user`
     function UserService(_http) {
         this._http = _http;
-        this.url = "http://localhost:3004/users/user";
+        // private url: string = `http://localhost:3004/users/user`
+        this.url = "/users/user";
     }
     UserService.prototype.findUser = function (login) {
         var body = JSON.stringify({

@@ -31,8 +31,8 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    if (ConversationService.getLogin()[0].admin)
+    
+    if (ConversationService.getLogin().admin === '1')
       this.isAdmin = true
 
     let chatData = new ChatModel()
