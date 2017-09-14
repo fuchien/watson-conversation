@@ -825,8 +825,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ConversationService = ConversationService_1 = (function () {
     function ConversationService(_http) {
         this._http = _http;
-        this.url = "http://localhost:3004/conversation";
-        // private url: string = `/conversation`
+        // private url: string = `http://localhost:3004/conversation`
+        this.url = "/conversation";
         this.context = {};
     }
     ConversationService.setLogin = function (login) {
@@ -888,10 +888,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ToneService = (function () {
-    // private url: string = `/apiswatson/tone`
     function ToneService(_http) {
         this._http = _http;
-        this.url = "http://localhost:3004/apiswatson/tone";
+        // private url: string = `http://localhost:3004/apiswatson/tone`
+        this.url = "/apiswatson/tone";
     }
     ToneService.prototype.enviarCredenciais = function (credenciais) {
         var body = JSON.stringify({
@@ -939,10 +939,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var UserService = (function () {
-    // private url: string = `/users`
     function UserService(_http) {
         this._http = _http;
-        this.url = "http://localhost:3004/users";
+        // private url: string = `http://localhost:3004/users`
+        this.url = "/users";
     }
     UserService.prototype.user = function (cpf) {
         return this._http.get(this.url + ("/" + cpf))

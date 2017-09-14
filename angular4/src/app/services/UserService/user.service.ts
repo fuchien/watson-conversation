@@ -6,8 +6,8 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class UserService {
 
-  private url: string = `http://localhost:3004/users`
-  // private url: string = `/users`
+  // private url: string = `http://localhost:3004/users`
+  private url: string = `/users`
 
   constructor(
     private _http: Http
