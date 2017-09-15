@@ -7,7 +7,7 @@
     <form [formGroup]="myForm" (ngSubmit)="enviarDados(myForm.value, myForm.valid)" class="form">
       <md-form-field class="example-full-width">
         <input mdInput #cpf autofocus formControlName="cpf" 
-        class="form-control"
+        class="form-control" kzMask="999.999.999-99" maxlength="14"
         placeholder="Digite o seu CPF '000.000.000-00'" >
         <md-icon mdSuffix>mode_edit</md-icon>
         <md-error *ngIf="myForm.controls.cpf.invalid">

@@ -18,12 +18,18 @@ export class ToneService {
     let body = JSON.stringify({
       username: credenciais.username,
       password: credenciais.password,
-      text: 'Estou muito feliz'
+      save: credenciais.save
     })
     let headers = new Headers({'Content-type': 'application/json'})
     return this._http.post(this.url, body, {headers: headers})
       .map((res: Response) => {
         return res.json()
       })
+  }
+
+  pegarCredenciais() {
+
+    return this._http.get(this.url)
+      .map((res: Response) => res.json())
   }
 }

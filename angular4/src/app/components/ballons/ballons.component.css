@@ -19,7 +19,7 @@
 
 .ballonLeft {
     float: left;
-    background-color: #00b0ff;
+    background-color: #2980b9;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     border-top-left-radius: 0;
     color: #fff;
@@ -28,7 +28,7 @@
 
 .ballonRight {
     float: right;
-    background-color: #eceff1;
+    background-color: #DADFE1;
     box-shadow: 0 1px 1px rgba(97, 18, 18, 0.5);
     border-top-right-radius: 0;
     word-wrap: break-word;

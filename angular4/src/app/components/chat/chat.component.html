@@ -1,13 +1,32 @@
-<md-tab-group>
-  <md-tab label="Settings" *ngIf="isAdmin">
+<md-tab-group class="tabs">
+  <md-tab color="primary" label="Settings" *ngIf="isAdmin">
+    <div class="menu">
+        <button md-icon-button [mdMenuTriggerFor]="menu">
+            <md-icon>more_vert</md-icon>
+          </button>
+          <md-menu #menu="mdMenu">
+            <button md-menu-item>
+              <md-icon>dialpad</md-icon>
+              <span>Redial</span>
+            </button>
+            <button md-menu-item disabled>
+              <md-icon>voicemail</md-icon>
+              <span>Check voicemail</span>
+            </button>
+            <button md-menu-item>
+              <md-icon>notifications_off</md-icon>
+              <span>Disable alerts</span>
+            </button>
+          </md-menu>
+    </div>
     <div class="settings">
       <div class="panel">
         <app-settings-tone></app-settings-tone>
       </div>
 
-      <div class="panel">
+      <!-- <div class="panel">
         <app-settings-tone></app-settings-tone>
-      </div>
+      </div> -->
     </div>
   </md-tab>
   <md-tab label="Chat">
@@ -21,6 +40,7 @@
           <md-form-field class="example-full-width">
             <input mdInput #message maxlength="50" autofocus [(ngModel)]="dialogMessage" class="form-control"
             name="message" placeholder="Message" (keypress)="eventKeyHandler($event, message.value)">
+            <md-icon mdSuffix>send</md-icon>
             <md-hint align="start"><strong>Tecle ENTER para enviar a mensagem</strong> </md-hint>
             <md-hint align="end">{{message.value.length}} / 50</md-hint>
           </md-form-field>

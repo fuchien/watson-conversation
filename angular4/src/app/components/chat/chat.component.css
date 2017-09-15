@@ -60,6 +60,11 @@
     margin: 2vh auto;
 }
 
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
 @media (min-width: 1024px) {
     
     .chat {
@@ -87,7 +92,8 @@
     }
 
     .panel {
-        max-width: 35vw;
+        max-width: 42vw;
+        min-width: 42vw;
         margin: 1vh auto;
     }
 }

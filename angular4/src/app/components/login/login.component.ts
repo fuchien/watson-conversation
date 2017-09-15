@@ -8,7 +8,7 @@ import { ConversationService } from './../../services/ConversationService/conver
 
 import { ErrorUserComponent } from '../error-user/error-user.component';
 
-const CPF_REGEX = /^([0-9]){3}\.([0-9]){3}\.([0-9]){3}-([0-9]){2}$/;
+// const CPF_REGEX = /^([0-9]){3}\.([0-9]){3}\.([0-9]){3}-([0-9]){2}$/;
 
 @Component({
   selector: 'app-login',
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.myForm = fb.group({
-      'cpf': [null, Validators.pattern(CPF_REGEX)]
+      'cpf': [null, Validators.minLength(11)]
     })
   }
 
@@ -46,7 +46,8 @@ export class LoginComponent implements OnInit {
 
     if (isValid) {
 
-      this.cpf = post.cpf
+      let cpf = post.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,"\$1.\$2.\$3\-\$4")
+      this.cpf = cpf
       this.inProgress = true
 
       this.userService.user(this.cpf)

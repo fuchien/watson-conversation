@@ -83,22 +83,24 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hammerjs__ = __webpack_require__("../../../../hammerjs/hammer.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_chat_chat_component__ = __webpack_require__("../../../../../src/app/components/chat/chat.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_ballons_ballons_component__ = __webpack_require__("../../../../../src/app/components/ballons/ballons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_chat_settings_toneAnalyzer_settings_component_tone__ = __webpack_require__("../../../../../src/app/components/chat/settings/toneAnalyzer/settings.component.tone.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_error_user_error_user_component__ = __webpack_require__("../../../../../src/app/components/error-user/error-user.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_UserService_user_service__ = __webpack_require__("../../../../../src/app/services/UserService/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_ConversationService_conversation_service__ = __webpack_require__("../../../../../src/app/services/ConversationService/conversation.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_ToneService_tone_service__ = __webpack_require__("../../../../../src/app/services/ToneService/tone.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__guards_auth_guards__ = __webpack_require__("../../../../../src/app/guards/auth.guards.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_login_mask_directive__ = __webpack_require__("../../../../../src/app/components/login/mask.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_chat_chat_component__ = __webpack_require__("../../../../../src/app/components/chat/chat.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_ballons_ballons_component__ = __webpack_require__("../../../../../src/app/components/ballons/ballons.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_chat_settings_toneAnalyzer_settings_component_tone__ = __webpack_require__("../../../../../src/app/components/chat/settings/toneAnalyzer/settings.component.tone.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_error_user_error_user_component__ = __webpack_require__("../../../../../src/app/components/error-user/error-user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_UserService_user_service__ = __webpack_require__("../../../../../src/app/services/UserService/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_ConversationService_conversation_service__ = __webpack_require__("../../../../../src/app/services/ConversationService/conversation.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_ToneService_tone_service__ = __webpack_require__("../../../../../src/app/services/ToneService/tone.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_auth_guards__ = __webpack_require__("../../../../../src/app/guards/auth.guards.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -125,12 +127,12 @@ var appRoutes = [
     },
     {
         path: 'login',
-        component: __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */]
     },
     {
         path: 'chat',
-        component: __WEBPACK_IMPORTED_MODULE_9__components_chat_chat_component__["a" /* ChatComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guards__["a" /* AuthGuard */]]
+        component: __WEBPACK_IMPORTED_MODULE_10__components_chat_chat_component__["a" /* ChatComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guards__["a" /* AuthGuard */]]
     }
 ];
 var AppModule = (function () {
@@ -141,12 +143,13 @@ var AppModule = (function () {
 AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_chat_chat_component__["a" /* ChatComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_ballons_ballons_component__["a" /* BallonsComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_error_user_error_user_component__["a" /* ErrorUserComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_chat_settings_toneAnalyzer_settings_component_tone__["a" /* SettingsToneComponent */]
+            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_chat_chat_component__["a" /* ChatComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_ballons_ballons_component__["a" /* BallonsComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_error_user_error_user_component__["a" /* ErrorUserComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_chat_settings_toneAnalyzer_settings_component_tone__["a" /* SettingsToneComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__components_login_mask_directive__["a" /* KzMaskDirective */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["a" /* BrowserModule */],
@@ -158,14 +161,15 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["d" /* MdCheckboxModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["q" /* MdSlideToggleModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["j" /* MdIconModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["s" /* MdSnackBarModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["g" /* MdDialogModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["o" /* MdProgressSpinnerModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["r" /* MdTabsModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["t" /* MdTabsModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["n" /* MdProgressBarModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["p" /* MdSelectModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["i" /* MdExpansionModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["e" /* MdDatepickerModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_material__["s" /* MdToolbarModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["u" /* MdToolbarModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["b" /* MdButtonModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["k" /* MdInputModule */],
             __WEBPACK_IMPORTED_MODULE_6__angular_material__["l" /* MdMenuModule */],
@@ -173,16 +177,16 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes)
         ],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_10__components_ballons_ballons_component__["a" /* BallonsComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_error_user_error_user_component__["a" /* ErrorUserComponent */]
+            __WEBPACK_IMPORTED_MODULE_11__components_ballons_ballons_component__["a" /* BallonsComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_error_user_error_user_component__["a" /* ErrorUserComponent */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_15__services_ConversationService_conversation_service__["a" /* ConversationService */],
-            __WEBPACK_IMPORTED_MODULE_17__guards_auth_guards__["a" /* AuthGuard */],
-            __WEBPACK_IMPORTED_MODULE_14__services_UserService_user_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_16__services_ToneService_tone_service__["a" /* ToneService */]
+            __WEBPACK_IMPORTED_MODULE_16__services_ConversationService_conversation_service__["a" /* ConversationService */],
+            __WEBPACK_IMPORTED_MODULE_18__guards_auth_guards__["a" /* AuthGuard */],
+            __WEBPACK_IMPORTED_MODULE_15__services_UserService_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_17__services_ToneService_tone_service__["a" /* ToneService */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -198,7 +202,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".divBallon {\r\n    min-width: 20%;\r\n    max-width: 60%;\r\n    border-radius: 1rem;\r\n    margin: 1vh auto;\r\n    padding: .4rem;\r\n    -webkit-user-select: text;\r\n       -moz-user-select: text;\r\n        -ms-user-select: text;\r\n            user-select: text;\r\n    cursor: text;\r\n}\r\n\r\n.logo {\r\n    width: 5%;\r\n}\r\n\r\n.ballon {\r\n    width: 92%;\r\n    padding: 0;\r\n}\r\n\r\n.ballonLeft {\r\n    float: left;\r\n    background-color: #00b0ff;\r\n    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);\r\n    border-top-left-radius: 0;\r\n    color: #fff;\r\n    margin-left: 8vw;\r\n}\r\n\r\n.ballonRight {\r\n    float: right;\r\n    background-color: #eceff1;\r\n    box-shadow: 0 1px 1px rgba(97, 18, 18, 0.5);\r\n    border-top-right-radius: 0;\r\n    word-wrap: break-word;\r\n    margin-right: 5vw;\r\n}\r\n\r\n.imgWatson {\r\n    border-radius: 5px;\r\n    width: 3rem;\r\n    height: 2rem;\r\n    margin-top: 1.5vh;\r\n    padding: 0;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n\r\n    .divBallon {\r\n        border-radius: 2rem;\r\n        margin: 2vh auto;\r\n        padding: .5rem;\r\n    }\r\n\r\n    .logo {\r\n        padding-right: 0;\r\n    }\r\n\r\n    .imgWatson {\r\n        width: 4rem;\r\n        height: 3rem;\r\n    }\r\n\r\n    .ballon {\r\n        width: 100%;\r\n    }\r\n\r\n    .ballonLeft {\r\n        border-top-left-radius: 0;\r\n        margin-left: 0;\r\n    }\r\n\r\n    .ballonRight {\r\n        border-top-right-radius: 0;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".divBallon {\r\n    min-width: 20%;\r\n    max-width: 60%;\r\n    border-radius: 1rem;\r\n    margin: 1vh auto;\r\n    padding: .4rem;\r\n    -webkit-user-select: text;\r\n       -moz-user-select: text;\r\n        -ms-user-select: text;\r\n            user-select: text;\r\n    cursor: text;\r\n}\r\n\r\n.logo {\r\n    width: 5%;\r\n}\r\n\r\n.ballon {\r\n    width: 92%;\r\n    padding: 0;\r\n}\r\n\r\n.ballonLeft {\r\n    float: left;\r\n    background-color: #2980b9;\r\n    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);\r\n    border-top-left-radius: 0;\r\n    color: #fff;\r\n    margin-left: 8vw;\r\n}\r\n\r\n.ballonRight {\r\n    float: right;\r\n    background-color: #DADFE1;\r\n    box-shadow: 0 1px 1px rgba(97, 18, 18, 0.5);\r\n    border-top-right-radius: 0;\r\n    word-wrap: break-word;\r\n    margin-right: 5vw;\r\n}\r\n\r\n.imgWatson {\r\n    border-radius: 5px;\r\n    width: 3rem;\r\n    height: 2rem;\r\n    margin-top: 1.5vh;\r\n    padding: 0;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n\r\n    .divBallon {\r\n        border-radius: 2rem;\r\n        margin: 2vh auto;\r\n        padding: .5rem;\r\n    }\r\n\r\n    .logo {\r\n        padding-right: 0;\r\n    }\r\n\r\n    .imgWatson {\r\n        width: 4rem;\r\n        height: 3rem;\r\n    }\r\n\r\n    .ballon {\r\n        width: 100%;\r\n    }\r\n\r\n    .ballonLeft {\r\n        border-top-left-radius: 0;\r\n        margin-left: 0;\r\n    }\r\n\r\n    .ballonRight {\r\n        border-top-right-radius: 0;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -291,7 +295,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".chat {\r\n    min-width: 95vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.form {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n}\r\n\r\n.panelChat {\r\n    margin-top: 5vh;\r\n    min-height: 70vh;\r\n    border: 1px solid rgba(30,30,120,.7);\r\n    border-radius: 5px;\r\n    max-height: 70vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    min-width: 95vw;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-track {\r\n    background-color: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar {\r\n    width: 6px;\r\n    background: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-thumb {\r\n    background: rgba(11, 237, 114, .8);\r\n}\r\n\r\n.example-form {\r\n    min-width: 95vw;\r\n    width: 95vw;\r\n    min-height: 10vh;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n.settings {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    max-width: 90vw;\r\n    min-width: 90vw;\r\n    height: auto;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    margin: 4vh auto;\r\n}\r\n\r\n.panel {\r\n    margin: 2vh auto;\r\n}\r\n\r\n@media (min-width: 1024px) {\r\n    \r\n    .chat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .form {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .panelChat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .example-form {\r\n        min-width: 80vw;\r\n        width: 80vw;\r\n    }\r\n\r\n    .settings {\r\n        max-width: 80vw;\r\n        min-width: 80vw;\r\n        -webkit-box-orient: horizontal;\r\n        -webkit-box-direction: normal;\r\n            -ms-flex-flow: row wrap;\r\n                flex-flow: row wrap;\r\n        -webkit-box-pack: center;\r\n            -ms-flex-pack: center;\r\n                justify-content: center;\r\n    }\r\n\r\n    .panel {\r\n        max-width: 35vw;\r\n        margin: 1vh auto;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".chat {\r\n    min-width: 95vw;\r\n    min-height: 85vh;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.form {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n}\r\n\r\n.panelChat {\r\n    margin-top: 5vh;\r\n    min-height: 70vh;\r\n    border: 1px solid rgba(30,30,120,.7);\r\n    border-radius: 5px;\r\n    max-height: 70vh;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n    min-width: 95vw;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-track {\r\n    background-color: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar {\r\n    width: 6px;\r\n    background: #1A94C4;\r\n}\r\n\r\n.panelChat::-webkit-scrollbar-thumb {\r\n    background: rgba(11, 237, 114, .8);\r\n}\r\n\r\n.example-form {\r\n    min-width: 95vw;\r\n    width: 95vw;\r\n    min-height: 10vh;\r\n}\r\n\r\n.example-full-width {\r\n    width: 100%;\r\n}\r\n\r\n.settings {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    max-width: 90vw;\r\n    min-width: 90vw;\r\n    height: auto;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    margin: 4vh auto;\r\n}\r\n\r\n.panel {\r\n    margin: 2vh auto;\r\n}\r\n\r\n.menu {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: end;\r\n        -ms-flex-pack: end;\r\n            justify-content: flex-end;\r\n}\r\n\r\n@media (min-width: 1024px) {\r\n    \r\n    .chat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .form {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .panelChat {\r\n        min-width: 80vw;\r\n    }\r\n\r\n    .example-form {\r\n        min-width: 80vw;\r\n        width: 80vw;\r\n    }\r\n\r\n    .settings {\r\n        max-width: 80vw;\r\n        min-width: 80vw;\r\n        -webkit-box-orient: horizontal;\r\n        -webkit-box-direction: normal;\r\n            -ms-flex-flow: row wrap;\r\n                flex-flow: row wrap;\r\n        -webkit-box-pack: center;\r\n            -ms-flex-pack: center;\r\n                justify-content: center;\r\n    }\r\n\r\n    .panel {\r\n        max-width: 42vw;\r\n        min-width: 42vw;\r\n        margin: 1vh auto;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -304,7 +308,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/chat/chat.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-tab-group>\n  <md-tab label=\"Settings\" *ngIf=\"isAdmin\">\n    <div class=\"settings\">\n      <div class=\"panel\">\n        <app-settings-tone></app-settings-tone>\n      </div>\n\n      <div class=\"panel\">\n        <app-settings-tone></app-settings-tone>\n      </div>\n    </div>\n  </md-tab>\n  <md-tab label=\"Chat\">\n    <div class=\"chat\">\n      <div class=\"form\">\n        <div id=\"divOverflow\" class=\"panel-body panelChat\">\n          <div #divBallons></div>\n        </div>\n    \n        <form class=\"example-form\">\n          <md-form-field class=\"example-full-width\">\n            <input mdInput #message maxlength=\"50\" autofocus [(ngModel)]=\"dialogMessage\" class=\"form-control\"\n            name=\"message\" placeholder=\"Message\" (keypress)=\"eventKeyHandler($event, message.value)\">\n            <md-hint align=\"start\"><strong>Tecle ENTER para enviar a mensagem</strong> </md-hint>\n            <md-hint align=\"end\">{{message.value.length}} / 50</md-hint>\n          </md-form-field>\n        </form>\n      </div>\n    </div>\n  </md-tab>\n</md-tab-group>"
+module.exports = "<md-tab-group class=\"tabs\">\n  <md-tab color=\"primary\" label=\"Settings\" *ngIf=\"isAdmin\">\n    <div class=\"menu\">\n        <button md-icon-button [mdMenuTriggerFor]=\"menu\">\n            <md-icon>more_vert</md-icon>\n          </button>\n          <md-menu #menu=\"mdMenu\">\n            <button md-menu-item>\n              <md-icon>dialpad</md-icon>\n              <span>Redial</span>\n            </button>\n            <button md-menu-item disabled>\n              <md-icon>voicemail</md-icon>\n              <span>Check voicemail</span>\n            </button>\n            <button md-menu-item>\n              <md-icon>notifications_off</md-icon>\n              <span>Disable alerts</span>\n            </button>\n          </md-menu>\n    </div>\n    <div class=\"settings\">\n      <div class=\"panel\">\n        <app-settings-tone></app-settings-tone>\n      </div>\n\n      <!-- <div class=\"panel\">\n        <app-settings-tone></app-settings-tone>\n      </div> -->\n    </div>\n  </md-tab>\n  <md-tab label=\"Chat\">\n    <div class=\"chat\">\n      <div class=\"form\">\n        <div id=\"divOverflow\" class=\"panel-body panelChat\">\n          <div #divBallons></div>\n        </div>\n    \n        <form class=\"example-form\">\n          <md-form-field class=\"example-full-width\">\n            <input mdInput #message maxlength=\"50\" autofocus [(ngModel)]=\"dialogMessage\" class=\"form-control\"\n            name=\"message\" placeholder=\"Message\" (keypress)=\"eventKeyHandler($event, message.value)\">\n            <md-icon mdSuffix>send</md-icon>\n            <md-hint align=\"start\"><strong>Tecle ENTER para enviar a mensagem</strong> </md-hint>\n            <md-hint align=\"end\">{{message.value.length}} / 50</md-hint>\n          </md-form-field>\n        </form>\n      </div>\n    </div>\n  </md-tab>\n</md-tab-group>"
 
 /***/ }),
 
@@ -483,7 +487,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".action {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.spinner {\r\n    max-height: 5vh;\r\n}", ""]);
+exports.push([module.i, ".action {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.field {\r\n    min-width: 48%;\r\n}\r\n\r\n.spinner {\r\n    max-height: 5vh;\r\n}", ""]);
 
 // exports
 
@@ -496,7 +500,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/chat/settings/toneAnalyzer/settings.component.tone.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-expansion-panel>\n  <md-expansion-panel-header>\n    <md-panel-title>\n      Tone Analyzer\n    </md-panel-title>\n    <md-panel-description>\n      Coloque os seus credenciais\n    </md-panel-description>\n  </md-expansion-panel-header>\n  \n  <form [formGroup]=\"myForm\" (ngSubmit)=\"enviarCredenciais(myForm.value, myForm.valid)\">\n    <md-form-field>\n      <input mdInput placeholder=\"username\" formControlName=\"username\" \n      class=\"form-control\" >\n      <md-error *ngIf=\"myForm.controls.username.invalid\">\n        username é <strong>obrigatório</strong>\n      </md-error>\n    </md-form-field>\n    \n    <md-form-field>\n      <input mdInput placeholder=\"password\" formControlName=\"password\" \n      class=\"form-control\" >\n      <md-error *ngIf=\"myForm.controls.password.invalid\">\n        password é <strong>obrigatório</strong>\n      </md-error>\n    </md-form-field>\n\n    <md-action-row class=\"action\">\n      <!-- <md-checkbox>Salvar</md-checkbox> -->\n      <md-slide-toggle color=\"primary\" (click)=\"saveOrNot()\">{{ isSave ? 'Save!' : 'Not save' }}</md-slide-toggle>\n      <button md-button color=\"primary\" *ngIf=\"!enviando\">ENVIAR</button>\n      <md-spinner class=\"spinner\" *ngIf=\"enviando\"></md-spinner>\n    </md-action-row>\n  </form>\n</md-expansion-panel>"
+module.exports = "<md-expansion-panel>\n  <md-expansion-panel-header>\n    <md-panel-title>\n      Tone Analyzer\n    </md-panel-title>\n    <md-panel-description>\n      Coloque os seus credenciais\n    </md-panel-description>\n  </md-expansion-panel-header>\n  \n  <form [formGroup]=\"myForm\" (ngSubmit)=\"enviarCredenciais(myForm.value, myForm.valid)\">\n    <md-form-field class=\"field\">\n      <input mdInput placeholder=\"username\" formControlName=\"username\" [(ngModel)]=\"username\"\n      class=\"form-control\" name=\"username\">\n      <md-error *ngIf=\"myForm.controls.username.invalid\">\n        username é <strong>obrigatório</strong>\n      </md-error>\n    </md-form-field>\n    \n    <md-form-field class=\"field\">\n      <input mdInput placeholder=\"password\" formControlName=\"password\" [(ngModel)]=\"password\"\n      class=\"form-control\" name=\"password\">\n      <md-error *ngIf=\"myForm.controls.password.invalid\">\n        password é <strong>obrigatório</strong>\n      </md-error>\n    </md-form-field>\n\n    <md-action-row class=\"action\">\n      <!-- <md-checkbox>Salvar</md-checkbox> -->\n      <md-slide-toggle color=\"primary\" (click)=\"saveOrNot()\">{{ isSave ? 'Save!' : 'Not save' }}</md-slide-toggle>\n      <button md-button color=\"primary\" *ngIf=\"!enviando\">ENVIAR</button>\n      <md-spinner class=\"spinner\" *ngIf=\"enviando\"></md-spinner>\n    </md-action-row>\n  </form>\n</md-expansion-panel>"
 
 /***/ }),
 
@@ -507,7 +511,8 @@ module.exports = "<md-expansion-panel>\n  <md-expansion-panel-header>\n    <md-p
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsToneComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_ToneService_tone_service__ = __webpack_require__("../../../../../src/app/services/ToneService/tone.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_ToneService_tone_service__ = __webpack_require__("../../../../../src/app/services/ToneService/tone.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -520,35 +525,63 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SettingsToneComponent = (function () {
-    function SettingsToneComponent(fb, toneService) {
+    function SettingsToneComponent(fb, toneService, snackBar) {
         this.fb = fb;
         this.toneService = toneService;
+        this.snackBar = snackBar;
         this.username = '';
         this.password = '';
         this.isSave = false;
         this.enviando = false;
+        this.checkBoxValue = false;
         this.myForm = fb.group({
             'username': [null, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required],
             'password': [null, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["j" /* Validators */].required]
         });
     }
     SettingsToneComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.toneService.pegarCredenciais()
+            .subscribe(function (res) {
+            _this.username = res.username;
+            _this.password = res.password;
+        }, function (err) {
+            _this.snackBar.open(err.json().msg, 'OK', {
+                duration: 3000
+            });
+        });
     };
     SettingsToneComponent.prototype.saveOrNot = function () {
         this.isSave = !this.isSave;
     };
     SettingsToneComponent.prototype.enviarCredenciais = function (post, isValid) {
+        var _this = this;
         if (isValid) {
+            if (post.username === this.username && post.password === this.password) {
+                this.snackBar.open('As credenciais são iguais', 'OK', {
+                    duration: 3000
+                });
+                return;
+            }
             this.enviando = true;
-            this.username = post.username;
-            this.password = post.password;
             var credenciais = {
-                username: this.username,
-                password: this.password
+                username: post.username,
+                password: post.password,
+                save: this.isSave
             };
             this.toneService.enviarCredenciais(credenciais)
-                .subscribe(function (res) { return console.log(res); });
+                .subscribe(function (res) {
+                _this.enviando = false;
+                _this.snackBar.open(res.msg, 'OK', {
+                    duration: 3000
+                });
+            }, function (err) {
+                _this.snackBar.open(err.json().msg, 'OK', {
+                    duration: 3000
+                });
+            });
         }
     };
     return SettingsToneComponent;
@@ -559,10 +592,10 @@ SettingsToneComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/chat/settings/toneAnalyzer/settings.component.tone.html"),
         styles: [__webpack_require__("../../../../../src/app/components/chat/settings/toneAnalyzer/settings.component.tone.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_ToneService_tone_service__["a" /* ToneService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_ToneService_tone_service__["a" /* ToneService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_ToneService_tone_service__["a" /* ToneService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_ToneService_tone_service__["a" /* ToneService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_material__["r" /* MdSnackBar */]) === "function" && _c || Object])
 ], SettingsToneComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=settings.component.tone.js.map
 
 /***/ }),
@@ -665,7 +698,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-toolbar color=\"primary\">\n  <span>Bluehack</span>\n</md-toolbar>\n\n<div class=\"chat\">\n  <div class=\"example-form\" *ngIf=\"!inProgress\">\n    <form [formGroup]=\"myForm\" (ngSubmit)=\"enviarDados(myForm.value, myForm.valid)\" class=\"form\">\n      <md-form-field class=\"example-full-width\">\n        <input mdInput #cpf autofocus formControlName=\"cpf\" \n        class=\"form-control\"\n        placeholder=\"Digite o seu CPF '000.000.000-00'\" >\n        <md-icon mdSuffix>mode_edit</md-icon>\n        <md-error *ngIf=\"myForm.controls.cpf.invalid\">\n          CPF é <strong>obrigatório</strong> no formato '000.000.000-00'\n        </md-error>\n      </md-form-field>\n    </form>\n  </div>\n  <div class=\"progress\">\n    <md-progress-bar mode=\"indeterminate\" *ngIf=\"inProgress\"></md-progress-bar>\n  </div>\n</div>\n<!-- (keypress)=\"eventKeyHandler($event, login.value)\" -->\n<!-- *ngIf=\"loginFormControl.hasError('required')\" -->"
+module.exports = "<md-toolbar color=\"primary\">\n  <span>Bluehack</span>\n</md-toolbar>\n\n<div class=\"chat\">\n  <div class=\"example-form\" *ngIf=\"!inProgress\">\n    <form [formGroup]=\"myForm\" (ngSubmit)=\"enviarDados(myForm.value, myForm.valid)\" class=\"form\">\n      <md-form-field class=\"example-full-width\">\n        <input mdInput #cpf autofocus formControlName=\"cpf\" \n        class=\"form-control\" kzMask=\"999.999.999-99\" maxlength=\"14\"\n        placeholder=\"Digite o seu CPF '000.000.000-00'\" >\n        <md-icon mdSuffix>mode_edit</md-icon>\n        <md-error *ngIf=\"myForm.controls.cpf.invalid\">\n          CPF é <strong>obrigatório</strong> no formato '000.000.000-00'\n        </md-error>\n      </md-form-field>\n    </form>\n  </div>\n  <div class=\"progress\">\n    <md-progress-bar mode=\"indeterminate\" *ngIf=\"inProgress\"></md-progress-bar>\n  </div>\n</div>\n<!-- (keypress)=\"eventKeyHandler($event, login.value)\" -->\n<!-- *ngIf=\"loginFormControl.hasError('required')\" -->"
 
 /***/ }),
 
@@ -697,7 +730,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var CPF_REGEX = /^([0-9]){3}\.([0-9]){3}\.([0-9]){3}-([0-9]){2}$/;
+// const CPF_REGEX = /^([0-9]){3}\.([0-9]){3}\.([0-9]){3}-([0-9]){2}$/;
 var LoginComponent = (function () {
     function LoginComponent(router, userService, dialog, fb) {
         this.router = router;
@@ -707,7 +740,7 @@ var LoginComponent = (function () {
         this.inProgress = false;
         this.cpf = '';
         this.myForm = fb.group({
-            'cpf': [null, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].pattern(CPF_REGEX)]
+            'cpf': [null, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["j" /* Validators */].minLength(11)]
         });
     }
     LoginComponent.prototype.ngOnInit = function () {
@@ -721,7 +754,8 @@ var LoginComponent = (function () {
     LoginComponent.prototype.enviarDados = function (post, isValid) {
         var _this = this;
         if (isValid) {
-            this.cpf = post.cpf;
+            var cpf = post.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, "\$1.\$2.\$3\-\$4");
+            this.cpf = cpf;
             this.inProgress = true;
             this.userService.user(this.cpf)
                 .subscribe(function (res) {
@@ -754,6 +788,103 @@ LoginComponent = __decorate([
 
 var _a, _b, _c, _d;
 //# sourceMappingURL=login.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/login/mask.directive.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KzMaskDirective; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var KzMaskDirective = KzMaskDirective_1 = (function () {
+    function KzMaskDirective() {
+    }
+    KzMaskDirective.prototype.writeValue = function (value) {
+    };
+    KzMaskDirective.prototype.registerOnChange = function (fn) {
+        this.onChange = fn;
+    };
+    KzMaskDirective.prototype.registerOnTouched = function (fn) {
+        this.onTouched = fn;
+    };
+    KzMaskDirective.prototype.onKeyup = function ($event) {
+        var valor = $event.target.value.replace(/\D/g, '');
+        var pad = this.kzMask.replace(/\D/g, '').replace(/9/g, '_');
+        var valorMask = valor + pad.substring(0, pad.length - valor.length);
+        // retorna caso pressionado backspace
+        if ($event.keyCode === 8) {
+            this.onChange(valor);
+            return;
+        }
+        if (valor.length <= pad.length) {
+            this.onChange(valor);
+        }
+        var valorMaskPos = 0;
+        valor = '';
+        for (var i = 0; i < this.kzMask.length; i++) {
+            if (isNaN(parseInt(this.kzMask.charAt(i)))) {
+                valor += this.kzMask.charAt(i);
+            }
+            else {
+                valor += valorMask[valorMaskPos++];
+            }
+        }
+        if (valor.indexOf('_') > -1) {
+            valor = valor.substr(0, valor.indexOf('_'));
+        }
+        $event.target.value = valor;
+    };
+    KzMaskDirective.prototype.onBlur = function ($event) {
+        if ($event.target.value.length === this.kzMask.length) {
+            return;
+        }
+        this.onChange('');
+        $event.target.value = '';
+    };
+    return KzMaskDirective;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('kzMask'),
+    __metadata("design:type", String)
+], KzMaskDirective.prototype, "kzMask", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('keyup', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], KzMaskDirective.prototype, "onKeyup", null);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('blur', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], KzMaskDirective.prototype, "onBlur", null);
+KzMaskDirective = KzMaskDirective_1 = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Directive */])({
+        selector: '[kzMask]',
+        providers: [{
+                provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* NG_VALUE_ACCESSOR */],
+                useExisting: KzMaskDirective_1,
+                multi: true
+            }]
+    })
+], KzMaskDirective);
+
+var KzMaskDirective_1;
+//# sourceMappingURL=mask.directive.js.map
 
 /***/ }),
 
@@ -897,13 +1028,17 @@ var ToneService = (function () {
         var body = JSON.stringify({
             username: credenciais.username,
             password: credenciais.password,
-            text: 'Estou muito feliz'
+            save: credenciais.save
         });
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Content-type': 'application/json' });
         return this._http.post(this.url, body, { headers: headers })
             .map(function (res) {
             return res.json();
         });
+    };
+    ToneService.prototype.pegarCredenciais = function () {
+        return this._http.get(this.url)
+            .map(function (res) { return res.json(); });
     };
     return ToneService;
 }());

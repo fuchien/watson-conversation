@@ -1,5 +1,6 @@
 const watson = require('watson-developer-cloud');
 const defaultJson = require('../config/default.json')
+const Tone = require('./apiswatson')
 
 function ConversationController() {
 

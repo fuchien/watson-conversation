@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.field {
+    min-width: 48%;
+}
+
 .spinner {
     max-height: 5vh;
 }

@@ -18,12 +18,14 @@ import {
   MdDialogModule,
   MdSlideToggleModule,
   MdExpansionModule,
+  MdSnackBarModule,
   MdIconModule,
   MdButtonModule,
   MdInputModule,
   MdMenuModule } from '@angular/material'
   import 'hammerjs'
   
+  import { KzMaskDirective } from './components/login/mask.directive';
   import { AppComponent } from './app.component';
   import { ChatComponent } from './components/chat/chat.component';
   import { BallonsComponent } from './components/ballons/ballons.component';
@@ -60,7 +62,8 @@ import {
     BallonsComponent,
     LoginComponent,
     ErrorUserComponent,
-    SettingsToneComponent
+    SettingsToneComponent,
+    KzMaskDirective
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,7 @@ import {
     MdCheckboxModule,
     MdSlideToggleModule,
     MdIconModule,
+    MdSnackBarModule,
     MdDialogModule,
     MdProgressSpinnerModule,
     MdTabsModule,
