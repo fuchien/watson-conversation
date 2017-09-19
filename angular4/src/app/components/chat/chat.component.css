@@ -47,25 +47,12 @@
     width: 100%;
 }
 
-.settings {
-    display: flex;
-    max-width: 90vw;
-    min-width: 90vw;
-    height: auto;
-    flex-flow: column;
-    margin: 4vh auto;
-}
-
-.panel {
-    margin: 2vh auto;
-}
-
 .menu {
     display: flex;
     justify-content: flex-end;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     
     .chat {
         min-width: 80vw;
@@ -82,18 +69,5 @@
     .example-form {
         min-width: 80vw;
         width: 80vw;
-    }
-
-    .settings {
-        max-width: 80vw;
-        min-width: 80vw;
-        flex-flow: row wrap;
-        justify-content: center;
-    }
-
-    .panel {
-        max-width: 42vw;
-        min-width: 42vw;
-        margin: 1vh auto;
     }
 }

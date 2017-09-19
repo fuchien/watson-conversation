@@ -1,0 +1,46 @@
+<div class="back">
+  <button md-raised-button color="primary" (click)="goBack()"><md-icon>keyboard_backspace</md-icon> Voltar</button>
+</div>
+
+<div class="cadastro">
+  <form [formGroup]="myForm" (ngSubmit)="salvarUser(myForm.value, myForm.valid)" class="form">
+    <md-form-field class="field">
+      <input mdInput placeholder="Digite o seu nome" formControlName="nome" [(ngModel)]="user.nome"
+      class="form-control" name="nome">
+      <md-error *ngIf="myForm.controls.nome.invalid">
+          Nome é <strong>obrigatório</strong>
+      </md-error>
+    </md-form-field>
+    
+    <md-form-field class="field">
+      <input mdInput placeholder="Digite o seu cpf" formControlName="cpf" [(ngModel)]="user.cpf"
+      class="form-control" name="cpf">
+      <md-error *ngIf="myForm.controls.cpf.invalid">
+          Cpf é <strong>obrigatório</strong>
+      </md-error>
+    </md-form-field>
+
+    <md-form-field class="field">
+      <input mdInput placeholder="Digite a descrição" formControlName="descricao" [(ngModel)]="user.descricao"
+      class="form-control" name="descricao">
+      <md-error *ngIf="myForm.controls.descricao.invalid">
+          Descricao é <strong>obrigatório</strong>
+      </md-error>
+    </md-form-field>
+
+    <md-select placeholder="Status" formControlName="admin" [(ngModel)]="user.amdin" name="admin">
+      <md-option *ngFor="let status of admin" [value]="status.value">
+        {{status.viewValue}}
+      </md-option>
+    </md-select>
+
+    <md-action-row class="action">
+      <!-- <md-checkbox>Salvar</md-checkbox> -->
+      <button md-raised-button color="primary" *ngIf="!enviando">SALVAR</button>
+      <md-spinner class="spinner" *ngIf="enviando"></md-spinner>
+    </md-action-row>
+  </form>
+</div>
+<div class="canvas">
+  <canvas #myChart></canvas>
+</div>

@@ -1,17 +1,18 @@
 <md-toolbar color="primary">
   <span>Bluehack</span>
 </md-toolbar>
+<!-- <input type="file" (change)="fileChange($event)" multiple="multiple" placeholder="Upload file"> -->
 
 <div class="chat">
   <div class="example-form" *ngIf="!inProgress">
     <form [formGroup]="myForm" (ngSubmit)="enviarDados(myForm.value, myForm.valid)" class="form">
       <md-form-field class="example-full-width">
         <input mdInput #cpf autofocus formControlName="cpf" 
-        class="form-control" kzMask="999.999.999-99" maxlength="14"
+        class="form-control" kzMask="999.999.999-99"
         placeholder="Digite o seu CPF '000.000.000-00'" >
         <md-icon mdSuffix>mode_edit</md-icon>
         <md-error *ngIf="myForm.controls.cpf.invalid">
-          CPF é <strong>obrigatório</strong> no formato '000.000.000-00'
+          CPF é <strong>obrigatório</strong>
         </md-error>
       </md-form-field>
     </form>

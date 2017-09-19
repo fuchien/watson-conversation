@@ -1,0 +1,32 @@
+h2 {
+    text-align: center;
+}
+
+.settings {
+    display: flex;
+    max-width: 90vw;
+    min-width: 90vw;
+    height: auto;
+    flex-flow: column;
+    margin: 4vh auto;
+}
+
+.panel {
+    margin: 2vh auto;
+}
+
+@media (min-width: 768px) {
+
+    .settings {
+        max-width: 90vw;
+        min-width: 90vw;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .panel {
+        max-width: 42vw;
+        min-width: 42vw;
+        margin: 1vh auto;
+    }
+}

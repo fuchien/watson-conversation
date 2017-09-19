@@ -13,23 +13,67 @@ export class UserService {
     private _http: Http
   ) { }
 
-  user(cpf) {
+  pegarUser(cpf) {
 
     return this._http.get(this.url + `/${cpf}`)
       .map((res: Response) => res.json())
   }
 
-  findUser(login) {
+  pegarUsers() {
 
-    let body = JSON.stringify({
-      login: login,
-      // nome: 'Eduardo',
-      // cpf: '444.444.444-44',
-      // descricao: 'Estagiario',
-      // admin: '1'
-    })
+    return this._http.get(this.url)
+      .map((res: Response) => res.json())
+  }
+
+  salvarUser(user) {
+    
     let headers = new Headers({'Content-type': 'application/json'})
-    return this._http.post(this.url, body, {headers: headers})
+
+    if (user.id) {
+
+      return this.atualizarUser(user)
+    } else {
+
+      let url = this.url + `/user`
+      let body = JSON.stringify({
+        nome: user.nome,
+        cpf: user.cpf,
+        descricao: user.descricao,
+        admin: user.admin
+      })
+
+      return this._http.post(url, body, {headers: headers})
+        .map((res: Response) => {
+          return res.json()
+        })
+      }
+  }
+
+  pegarPorId(id) {
+
+    return this._http.get(this.url + `/user/${id}`)
+      .map(res => res.json());
+  }
+
+  deletarUser(id) {
+
+    return this._http.delete(this.url + `/${id}`)
+      .map(res => res.json())
+  }
+
+  atualizarUser(user) {
+
+    let headers = new Headers({'Content-type': 'application/json'})
+    let url = this.url + `/user/${user.id}`
+    let body = JSON.stringify({
+      nome: user.nome,
+      cpf: user.cpf,
+      descricao: user.descricao,
+      admin: user.admin,
+      id: user.id
+    })
+
+    return this._http.put(url, body, {headers: headers})
       .map((res: Response) => {
         return res.json()
       })

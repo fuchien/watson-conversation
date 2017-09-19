@@ -1,0 +1,41 @@
+.back {
+    margin: 0 auto;
+    width: 70vw;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cadastro {
+    min-width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5vh auto;
+}
+
+.form {
+    min-width: 90%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.field {
+    min-width: 48%;
+}
+
+.spinner {
+    max-height: 5vh;
+}
+
+.canvas {
+    margin-top: 2vh;
+}
+
+canvas {
+    margin: 2vh auto;
+    min-width: 65vw;
+    max-width: 65vw;
+    min-height: 70vh;
+    max-height: 70vh;
+}
