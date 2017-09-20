@@ -1511,7 +1511,7 @@ var UserService = (function () {
         this.url = "https://bluehack.herokuapp.com/users";
     }
     UserService.prototype.pegarUser = function (cpf) {
-        return this._http.get("https://bluehack.herokuapp.com/users/" + cpf)
+        return this._http.get(this.url + ("/" + cpf))
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.pegarUsers = function () {
