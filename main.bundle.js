@@ -1386,7 +1386,7 @@ var ConversationService = ConversationService_1 = (function () {
         this._http = _http;
         // private url: string = `http://localhost:3004/conversation`
         // private url: string = `/conversation`
-        this.url = "bluehack.herokuapp.com/conversation";
+        this.url = "https://bluehack.herokuapp.com/conversation";
         this.context = {};
     }
     ConversationService.setLogin = function (login) {
@@ -1452,7 +1452,7 @@ var ToneService = (function () {
         this._http = _http;
         // private url: string = `http://localhost:3004/apiswatson/tone`
         // private url: string = `/apiswatson/tone`
-        this.url = "bluehack.herokuapp.com/apiswatson/tone";
+        this.url = "https://bluehack.herokuapp.com/apiswatson/tone";
     }
     ToneService.prototype.enviarCredenciais = function (credenciais) {
         var body = JSON.stringify({
@@ -1508,7 +1508,7 @@ var UserService = (function () {
         this._http = _http;
         // private url: string = `http://localhost:3004/users`
         // private url: string = `/users`
-        this.url = "bluehack.herokuapp.com/users";
+        this.url = "https://bluehack.herokuapp.com/users";
     }
     UserService.prototype.pegarUser = function (cpf) {
         return this._http.get(this.url + ("/" + cpf))
