@@ -8,6 +8,7 @@ export class UserService {
 
   // private url: string = `http://localhost:3004/users`
   private url: string = `/users`
+  // private url: string = `https://bluehack.herokuapp.com/users`
 
   constructor(
     private _http: Http

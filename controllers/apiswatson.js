@@ -5,7 +5,7 @@ const Tone = datasource.models.Tone
 
 function ApisWatsonController() {
 
-    this.addCrediciaisTone = (req, res, next) => {
+    this.addCredenciaisTone = (req, res, next) => {
 
         // ToneAnalyzer.pegarDados(text)
         //     .then(response => {

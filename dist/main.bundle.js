@@ -1386,6 +1386,7 @@ var ConversationService = ConversationService_1 = (function () {
         this._http = _http;
         // private url: string = `http://localhost:3004/conversation`
         this.url = "/conversation";
+        // private url: string = `https://bluehack.herokuapp.com/conversation`
         this.context = {};
     }
     ConversationService.setLogin = function (login) {
@@ -1447,6 +1448,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ToneService = (function () {
+    // private url: string = `https://bluehack.herokuapp.com/apiswatson/tone`
     function ToneService(_http) {
         this._http = _http;
         // private url: string = `http://localhost:3004/apiswatson/tone`
@@ -1502,6 +1504,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var UserService = (function () {
+    // private url: string = `https://bluehack.herokuapp.com/users`
     function UserService(_http) {
         this._http = _http;
         // private url: string = `http://localhost:3004/users`
