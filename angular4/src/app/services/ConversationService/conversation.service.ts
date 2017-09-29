@@ -8,8 +8,8 @@ import { ChatModel } from "../../components/chat/chat.model"
 export class ConversationService {
 
   // private url: string = `http://localhost:3004/conversation`
-  // private url: string = `/conversation`
-  private url: string = `https://bluehack.herokuapp.com/conversation`
+  private url: string = `/conversation`
+  // private url: string = `https://bluehack.herokuapp.com/conversation`
   private context: any = {}
   private static login: any = null
 
