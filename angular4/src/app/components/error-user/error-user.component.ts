@@ -13,7 +13,7 @@ import {MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 })
 export class ErrorUserComponent implements OnInit {
 
-  private _injectedValue: any = 'Usuário não existe!';
+  _injectedValue: any = 'Usuário não existe!';
 
   constructor(
     public thisDialogRef: MdDialogRef<ErrorUserComponent>,

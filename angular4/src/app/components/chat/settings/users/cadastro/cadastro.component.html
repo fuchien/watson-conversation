@@ -28,7 +28,7 @@
       </md-error>
     </md-form-field>
 
-    <md-select placeholder="Status" formControlName="admin" [(ngModel)]="user.amdin" name="admin">
+    <md-select placeholder="Status" formControlName="admin" [(ngModel)]="user.admin" name="admin">
       <md-option *ngFor="let status of admin" [value]="status.value">
         {{status.viewValue}}
       </md-option>

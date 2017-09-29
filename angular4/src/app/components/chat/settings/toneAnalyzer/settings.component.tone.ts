@@ -11,13 +11,13 @@ import { ToneService } from './../../../../services/ToneService/tone.service';
 })
 export class SettingsToneComponent implements OnInit {
 
-  private myForm: FormGroup
+  myForm: FormGroup
 
-  private username: string = ''
-  private password: string = ''
+  username: string = ''
+  password: string = ''
 
-  private isSave: boolean = false
-  private enviando: boolean = false
+  isSave: boolean = false
+  enviando: boolean = false
   private checkBoxValue: boolean = false
 
   constructor(

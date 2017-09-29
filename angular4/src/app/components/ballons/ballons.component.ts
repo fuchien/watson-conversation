@@ -25,7 +25,7 @@ export class BallonsComponent implements OnInit {
   private elementSideValue: string;
   
   //Variáveis de controle da interface
-  private isSara: boolean;
+  isSara: boolean;
 
   //Propriedade para informar se o balão deve ficar a direita ou a esquerda do diálogo
   set setIsLeft(value: boolean) {

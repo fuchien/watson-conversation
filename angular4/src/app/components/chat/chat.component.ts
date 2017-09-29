@@ -19,8 +19,8 @@ export class ChatComponent implements OnInit {
 
   @ViewChild('divBallons', { read: ViewContainerRef }) divBallons;
 
-  private dialogMessage: string = ''
-  private isAdmin: boolean = false
+  dialogMessage: string = ''
+  isAdmin: boolean = false
 
   constructor(
     private conversationService: ConversationService,
@@ -51,7 +51,7 @@ export class ChatComponent implements OnInit {
       })
   }
 
-  private eventKeyHandler(event, inputValue): void {
+  eventKeyHandler(event, inputValue): void {
 
       if (event.keyCode == 13) {
 

@@ -19,7 +19,7 @@ import { RequestOptions, Headers, Http } from '@angular/http';
 })
 export class LoginComponent implements OnInit {
 
-  private inProgress: boolean = false
+  inProgress: boolean = false
   private cpf: string = ''
   private myForm: FormGroup
 

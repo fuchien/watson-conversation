@@ -12,7 +12,7 @@ import { UserService } from './../../../../services/UserService/user.service';
 })
 export class UsersComponent implements OnInit {
 
-  private users: Array<Object> = []
+  users: Array<Object> = []
 
   constructor(
     private userService: UserService,

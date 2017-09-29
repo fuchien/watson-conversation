@@ -18,11 +18,11 @@ export class CadastroComponent implements OnInit {
 
   @ViewChild('myChart') myChart: ElementRef;
 
-  private myForm: FormGroup
-  private enviando: boolean = false
-  private user: CadastroModel = new CadastroModel()
+  myForm: FormGroup
+  enviando: boolean = false
+  user: CadastroModel = new CadastroModel()
   
-  private admin = [
+  admin = [
     {value: '1', viewValue: '1'},
     {value: '0', viewValue: '0'}
   ];
