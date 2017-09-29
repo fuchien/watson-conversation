@@ -22,7 +22,7 @@ export class ToneService {
       save: credenciais.save
     })
     let headers = new Headers({'Content-type': 'application/json'})
-    return this._http.post(this.url, body, {headers: headers})
+    return this._http.post(`https://bluehack.herokuapp.com/apiswatson/tone`, body, {headers: headers})
       .map((res: Response) => {
         return res.json()
       })
@@ -30,7 +30,7 @@ export class ToneService {
 
   pegarCredenciais() {
 
-    return this._http.get(this.url)
+    return this._http.get(`https://bluehack.herokuapp.com/apiswatson/tone`)
       .map((res: Response) => res.json())
   }
 }

@@ -16,13 +16,13 @@ export class UserService {
 
   pegarUser(cpf) {
 
-    return this._http.get(this.url + `/${cpf}`)
+    return this._http.get(`https://bluehack.herokuapp.com/users` + `/${cpf}`)
       .map((res: Response) => res.json())
   }
 
   pegarUsers() {
 
-    return this._http.get(this.url)
+    return this._http.get(`https://bluehack.herokuapp.com/users`)
       .map((res: Response) => res.json())
   }
 
@@ -35,7 +35,7 @@ export class UserService {
       return this.atualizarUser(user)
     } else {
 
-      let url = this.url + `/user`
+      let url = `https://bluehack.herokuapp.com/users` + `/user`
       let body = JSON.stringify({
         nome: user.nome,
         cpf: user.cpf,
@@ -52,20 +52,20 @@ export class UserService {
 
   pegarPorId(id) {
 
-    return this._http.get(this.url + `/user/${id}`)
+    return this._http.get(`https://bluehack.herokuapp.com/users` + `/user/${id}`)
       .map(res => res.json());
   }
 
   deletarUser(id) {
 
-    return this._http.delete(this.url + `/${id}`)
+    return this._http.delete(`https://bluehack.herokuapp.com/users` + `/${id}`)
       .map(res => res.json())
   }
 
   atualizarUser(user) {
 
     let headers = new Headers({'Content-type': 'application/json'})
-    let url = this.url + `/user/${user.id}`
+    let url = `https://bluehack.herokuapp.com/users` + `/user/${user.id}`
     let body = JSON.stringify({
       nome: user.nome,
       cpf: user.cpf,
