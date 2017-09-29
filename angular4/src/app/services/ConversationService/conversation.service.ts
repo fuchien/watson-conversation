@@ -39,7 +39,7 @@ export class ConversationService {
       login: ConversationService.getLogin()
     })
     let headers = new Headers({'Content-type': 'application/json'})
-    return this._http.post(`https://bluehack.herokuapp.com/conversation`, body, {headers: headers})
+    return this._http.post(`http://bluehack.herokuapp.com/conversation`, body, {headers: headers})
       .map((res: Response) => {
         this.context = res.json().context
         return res.json()
