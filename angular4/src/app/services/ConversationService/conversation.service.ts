@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import {Http, Headers, Response} from '@angular/http';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
+
 import { ChatModel } from "../../components/chat/chat.model"
+import { Config } from './../../config';
 
 @Injectable()
 export class ConversationService {
 
-  // private url: string = `http://localhost:3004/conversation`
-  // private url: string = `/conversation`
-  private url: string = `https://bluehack.herokuapp.com/conversation`
+  private url: string = `${Config.BackEndPoint}/conversation`
   private context: any = {}
   private static login: any = null
 
@@ -39,7 +39,7 @@ export class ConversationService {
       login: ConversationService.getLogin()
     })
     let headers = new Headers({'Content-type': 'application/json'})
-    return this._http.post(`http://bluehack.herokuapp.com/conversation`, body, {headers: headers})
+    return this._http.post(this.url, body, {headers: headers})
       .map((res: Response) => {
         this.context = res.json().context
         return res.json()

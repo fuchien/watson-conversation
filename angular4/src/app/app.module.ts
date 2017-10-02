@@ -39,11 +39,13 @@ import { ErrorUserComponent } from './components/error-user/error-user.component
 import { UserService } from './services/UserService/user.service';
 import { ConversationService } from './services/ConversationService/conversation.service';
 import { ToneService } from './services/ToneService/tone.service';
+import { YoutubeService } from './services/YoutubeService/youtube.service';
 import { UsersComponent } from './components/chat/settings/users/users.component';
 import { ApisComponent } from './components/chat/settings/apis/apis.component';
 
 import { AuthGuard } from './guards/auth.guards';
 import { CadastroComponent } from './components/chat/settings/users/cadastro/cadastro.component';
+import { YoutubeComponent } from './components/chat/youtube/youtube.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { CadastroComponent } from './components/chat/settings/users/cadastro/cad
     KzMaskDirective,
     UsersComponent,
     ApisComponent,
-    CadastroComponent
+    CadastroComponent,
+    YoutubeComponent
   ],
   imports: [
     BrowserModule,
@@ -87,13 +90,15 @@ import { CadastroComponent } from './components/chat/settings/users/cadastro/cad
   ],
   entryComponents: [
     BallonsComponent,
+    YoutubeComponent,
     ErrorUserComponent
 ],
   providers: [
     ConversationService,
     AuthGuard,
     UserService,
-    ToneService
+    ToneService,
+    YoutubeService
   ],
   bootstrap: [AppComponent]
 })

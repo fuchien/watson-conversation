@@ -3,12 +3,12 @@ import {Http, Headers, Response} from '@angular/http';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
 
+import { Config } from './../../config';
+
 @Injectable()
 export class UserService {
 
-  // private url: string = `http://localhost:3004/users`
-  // private url: string = `/users`
-  private url: string = `https://bluehack.herokuapp.com/users`
+  private url: string = `${Config.BackEndPoint}/users`
 
   constructor(
     private _http: Http
@@ -16,13 +16,13 @@ export class UserService {
 
   pegarUser(cpf) {
 
-    return this._http.get(`http://bluehack.herokuapp.com/users` + `/${cpf}`)
+    return this._http.get(`${this.url}/${cpf}`)
       .map((res: Response) => res.json())
   }
 
   pegarUsers() {
 
-    return this._http.get(`http://bluehack.herokuapp.com/users`)
+    return this._http.get(this.url)
       .map((res: Response) => res.json())
   }
 
@@ -35,7 +35,7 @@ export class UserService {
       return this.atualizarUser(user)
     } else {
 
-      let url = `http://bluehack.herokuapp.com/users/user`
+      let url = `${this.url}/user`
       let body = JSON.stringify({
         nome: user.nome,
         cpf: user.cpf,
@@ -52,20 +52,20 @@ export class UserService {
 
   pegarPorId(id) {
 
-    return this._http.get(`http://bluehack.herokuapp.com/users/user/${id}`)
+    return this._http.get(`${this.url}/user/${id}`)
       .map(res => res.json());
   }
 
   deletarUser(id) {
 
-    return this._http.delete(`http://bluehack.herokuapp.com/users/${id}`)
+    return this._http.delete(`${this.url}/${id}`)
       .map(res => res.json())
   }
 
   atualizarUser(user) {
 
     let headers = new Headers({'Content-type': 'application/json'})
-    let url = `http://bluehack.herokuapp.com/users/user/${user.id}`
+    let url = `${this.url}/user/${user.id}`
     let body = JSON.stringify({
       nome: user.nome,
       cpf: user.cpf,
