@@ -46,6 +46,7 @@ import { ApisComponent } from './components/chat/settings/apis/apis.component';
 import { AuthGuard } from './guards/auth.guards';
 import { CadastroComponent } from './components/chat/settings/users/cadastro/cadastro.component';
 import { YoutubeComponent } from './components/chat/youtube/youtube.component';
+import { CarregarDirective } from './components/chat/carregar.directive';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { YoutubeComponent } from './components/chat/youtube/youtube.component';
     UsersComponent,
     ApisComponent,
     CadastroComponent,
-    YoutubeComponent
+    YoutubeComponent,
+    CarregarDirective
   ],
   imports: [
     BrowserModule,

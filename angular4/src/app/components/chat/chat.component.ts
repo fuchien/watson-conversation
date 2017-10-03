@@ -23,6 +23,7 @@ export class ChatComponent implements OnInit {
 
   dialogMessage: string = ''
   isAdmin: boolean
+  carregarMsg: boolean = false
 
   constructor(
     private conversationService: ConversationService,
@@ -77,23 +78,28 @@ export class ChatComponent implements OnInit {
 
     let chatData = new ChatModel()
     chatData.setText = msg
-
+    
     const factory = this.componentFactoryResolver.resolveComponentFactory(BallonsComponent);
     
     //Insere a mensagem do usuário no balão
-    var ref = this.divBallons.createComponent(factory);
+    let ref = this.divBallons.createComponent(factory);
     ref.instance.setIsLeft = false;
     ref.instance.setMessage = msg;
     ref.changeDetectorRef.detectChanges();
+    
+    this.carregarMsg = true
+    this.updateScrollBar()
 
     this.conversationService.sendMessage(chatData)
       .subscribe(res => {
+
+        this.carregarMsg = false
 
         //Verifica se deve criar o componente de vídeos do Youtube
         const watsonDefinitionVideoIntentId = true;
         if (watsonDefinitionVideoIntentId) {
 
-          this.youtubeService.searchVideo(`${msg} legendado`)
+          this.youtubeService.searchVideo(msg)
             .subscribe(res => {
               
               const factory = this.componentFactoryResolver.resolveComponentFactory(BallonsComponent);

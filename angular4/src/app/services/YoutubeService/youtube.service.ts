@@ -15,7 +15,9 @@ export class YoutubeService {
 
   searchVideo(query) {
 
-    return this._http.get(`${this.BASE_URL}?q=${query}&part=snippet&key=${this.API_KEY}`)
+    let q = `${query} trailer legendado`
+
+    return this._http.get(`${this.BASE_URL}?q=${q}&part=snippet&key=${this.API_KEY}`)
       .map((res: Response) => res.json())
       .map(json => json.items)
       .map(items => {

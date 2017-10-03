@@ -50,9 +50,9 @@
     border: 1px solid #DADADA;
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
     position: relative;
-    min-width: 30vw;
-    max-width: 30vw;
-    min-height: 40vh;
+    min-width: 70vw;
+    max-width: 70vw;
+    min-height: 30vh;
     margin-top: 0;
 }
 
@@ -92,5 +92,11 @@
 
     .ballonRight {
         border-top-right-radius: 0;
+    }
+
+    #youtube {
+        min-width: 30vw;
+        max-width: 30vw;
+        min-height: 40vh;
     }
 }
