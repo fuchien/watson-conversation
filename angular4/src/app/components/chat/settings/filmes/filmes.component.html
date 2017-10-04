@@ -1,0 +1,23 @@
+<div class="container">
+  <ul class="ul_movies">
+    <li class="li_movies" *ngFor="let movie of movies">
+      <md-card class="example-card">
+        <md-card-header>
+          <div md-card-avatar class="example-header-image"><img src="http://image.tmdb.org/t/p/w185/{{movie.backdrop_path}}"></div>
+          <md-card-title class="title">{{ movie.title }}</md-card-title>
+          <md-card-subtitle>Data de Lançamento: {{ movie.release_date }}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" alt="Photo of a Shiba Inu">
+        <md-card-content>
+          <p>
+            {{ movie.overview }}
+          </p>
+        </md-card-content>
+        <md-card-actions class="actions">
+          <button md-raised-button color="primary" (click)="goDetails(movie.id)">Detalhes</button>
+          <button md-raised-button>Compartilhar</button>
+        </md-card-actions>
+      </md-card>
+    </li>
+  </ul>
+</div>

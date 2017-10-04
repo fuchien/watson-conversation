@@ -1,0 +1,21 @@
+<div class="container">
+  <md-card class="example-card">
+    <md-card-header class="head">
+      <div md-card-avatar class="example-header-image"><img src="http://image.tmdb.org/t/p/w185/{{movie.backdrop_path}}"></div>
+      <div class="header">
+        <md-card-title class="title">{{ movie.title }}</md-card-title>
+        <md-card-subtitle>{{ movie.tagline }}</md-card-subtitle>
+        <md-card-subtitle>Data de Lançamento: {{ movie.release_date }}</md-card-subtitle>
+      </div>
+    </md-card-header>
+    <md-card-content class="content">
+      <p>
+        {{ movie.overview }}
+      </p>
+    </md-card-content>
+    <div class="video" id="youtube">
+      <md-spinner class="spinner" *ngIf="buscando"></md-spinner>
+      <iframe [src]='videoUrl | safe' frameborder="0" *ngIf="!buscando" allowfullscreen></iframe>
+    </div>
+  </md-card>
+</div>

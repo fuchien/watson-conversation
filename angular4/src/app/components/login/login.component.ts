@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
       this.userService.pegarUser(this.cpf)
         .subscribe(res => {
             ConversationService.setLogin(res)
-            this.router.navigate(['/chat/apis'])
+            this.router.navigate(['/chat/filmes'])
           }, err => {
             this.inProgress = false
             this.openDialog(err.json().msg)

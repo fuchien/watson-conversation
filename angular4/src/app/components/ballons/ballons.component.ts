@@ -26,11 +26,13 @@ export class BallonsComponent implements OnInit {
     ngOnInit() {
     }
 
+    // colocar o VIDEO
     set setVideoUrl(value: string) {
         this.video = true
         this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(value);
     }
     
+    // mostrar VIDEO no balao
     get getVideoUrl() {
         return this.videoUrl;
     }

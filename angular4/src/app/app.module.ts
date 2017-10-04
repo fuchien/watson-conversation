@@ -35,18 +35,21 @@ import { BallonsComponent } from './components/ballons/ballons.component';
 import { SettingsToneComponent } from './components/chat/settings/toneAnalyzer/settings.component.tone';
 import { LoginComponent } from './components/login/login.component';
 import { ErrorUserComponent } from './components/error-user/error-user.component';
-
-import { UserService } from './services/UserService/user.service';
-import { ConversationService } from './services/ConversationService/conversation.service';
-import { ToneService } from './services/ToneService/tone.service';
-import { YoutubeService } from './services/YoutubeService/youtube.service';
 import { UsersComponent } from './components/chat/settings/users/users.component';
 import { ApisComponent } from './components/chat/settings/apis/apis.component';
 
+import { UserService } from './services/UserService/user.service';
+import { ConversationService } from './services/ConversationService/conversation.service';
+import { MoviesService } from './services/MoviesService/movies.service';
+import { ToneService } from './services/ToneService/tone.service';
+import { YoutubeService } from './services/YoutubeService/youtube.service';
+
 import { AuthGuard } from './guards/auth.guards';
 import { CadastroComponent } from './components/chat/settings/users/cadastro/cadastro.component';
-import { YoutubeComponent } from './components/chat/youtube/youtube.component';
 import { CarregarDirective } from './components/chat/carregar.directive';
+import { FilmesComponent } from './components/chat/settings/filmes/filmes.component';
+import { DetailsComponent } from './components/chat/settings/details/details.component';
+import { SafePipe } from './pipes/SafePipe/safe.directive';
 
 @NgModule({
   declarations: [
@@ -60,8 +63,10 @@ import { CarregarDirective } from './components/chat/carregar.directive';
     UsersComponent,
     ApisComponent,
     CadastroComponent,
-    YoutubeComponent,
-    CarregarDirective
+    CarregarDirective,
+    FilmesComponent,
+    DetailsComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -92,15 +97,15 @@ import { CarregarDirective } from './components/chat/carregar.directive';
   ],
   entryComponents: [
     BallonsComponent,
-    YoutubeComponent,
     ErrorUserComponent
-],
+  ],
   providers: [
     ConversationService,
     AuthGuard,
     UserService,
     ToneService,
-    YoutubeService
+    YoutubeService,
+    MoviesService
   ],
   bootstrap: [AppComponent]
 })

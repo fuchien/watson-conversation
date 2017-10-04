@@ -4,6 +4,8 @@ import { CadastroComponent } from './components/chat/settings/users/cadastro/cad
 import { ApisComponent } from './components/chat/settings/apis/apis.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { LoginComponent } from './components/login/login.component';
+import { FilmesComponent } from './components/chat/settings/filmes/filmes.component';
+import { DetailsComponent } from './components/chat/settings/details/details.component';
 import { UsersComponent } from './components/chat/settings/users/users.component';
 
 import { AuthGuard } from './guards/auth.guards';
@@ -28,6 +30,14 @@ const appRoutes: Routes = [
             {
                 path: 'apis',
                 component: ApisComponent
+            },
+            {
+                path: 'filmes',
+                component: FilmesComponent
+            },
+            {
+                path: 'details/:id',
+                component: DetailsComponent
             },
             {
                 path: 'users',

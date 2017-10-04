@@ -7,9 +7,9 @@ import { Component, OnInit,
 } from '@angular/core';
 
 import { ConversationService } from './../../services/ConversationService/conversation.service';
+import { MoviesService } from './../../services/MoviesService/movies.service';
 import { YoutubeService } from './../../services/YoutubeService/youtube.service';
 import { BallonsComponent } from './../ballons/ballons.component';
-import { YoutubeComponent } from './youtube/youtube.component';
 import { ChatModel } from "./chat.model"
 
 @Component({
@@ -29,7 +29,8 @@ export class ChatComponent implements OnInit {
     private conversationService: ConversationService,
     private cdr: ChangeDetectorRef,
     private componentFactoryResolver: ComponentFactoryResolver,
-    private youtubeService: YoutubeService
+    private youtubeService: YoutubeService,
+    private moviesService: MoviesService
   ) {
     
   }
@@ -45,23 +46,41 @@ export class ChatComponent implements OnInit {
     this.conversationService.sendMessage(chatData)
       .subscribe(res => {
 
-        //Verifica se deve criar o componente de vídeos do Youtube
-        // const watsonDefinitionVideoIntentId = true;
-        // if (watsonDefinitionVideoIntentId) {
-
-        //     const youtubeFactory = this.componentFactoryResolver.resolveComponentFactory(YoutubeComponent);
-        //     var youtubeRef = this.divBallons.createComponent(youtubeFactory);
-        //     youtubeRef.instance.setVideoUrl = `https://www.youtube.com/embed/?listType=search&list=${this.videoValue}`;
-        // }
-
+        // criar balao da primeira msg do Watson
+        // colocar os atributos necessarios
+        // manter na LEFT com a IMG do WATSON
         let msg = res.output.text
         const factory = this.componentFactoryResolver.resolveComponentFactory(BallonsComponent);
-        
-        //Insere a mensagem do usuário no balão
-        var ref = this.divBallons.createComponent(factory);
+        let ref = this.divBallons.createComponent(factory);
         ref.instance.setIsLeft = true;
         ref.instance.setMessage = msg;
         ref.changeDetectorRef.detectChanges();
+
+        // pegar os MOVIES
+        // this.moviesService.getMovies()
+        //   .subscribe(res => {
+
+        //     let title = []
+        //     let movies = res.results.filter(filme => {
+        //       return filme.release_date > '2017-10-01' && filme.release_date < '2017-10-31'
+        //     })
+
+        //     movies.forEach(movie => {
+              
+        //       let keys = Object.keys(movie)
+
+        //       title.push(movie.title)
+        //     });
+
+            // http://image.tmdb.org/t/p/w185/<IMAGE>
+
+            // criar balao com o titulo do MOVIE
+            // const factoryMovie = this.componentFactoryResolver.resolveComponentFactory(BallonsComponent);
+            // let refMovie = this.divBallons.createComponent(factoryMovie);
+            // refMovie.instance.setIsLeft = true;
+            // refMovie.instance.setMessage = `${movies[0].title} -- Data de lançamento: ${movies[0].release_date}`;
+            // refMovie.changeDetectorRef.detectChanges();
+      //     })
       })
   }
 
@@ -79,43 +98,45 @@ export class ChatComponent implements OnInit {
     let chatData = new ChatModel()
     chatData.setText = msg
     
+    // criar balao com a MSG do USUARIO
+    // colocar os atributos e deixar o balao no RIGHT
     const factory = this.componentFactoryResolver.resolveComponentFactory(BallonsComponent);
-    
-    //Insere a mensagem do usuário no balão
     let ref = this.divBallons.createComponent(factory);
     ref.instance.setIsLeft = false;
     ref.instance.setMessage = msg;
     ref.changeDetectorRef.detectChanges();
     
+    // mostrar o CARREGAMENTO de DIGITAR
     this.carregarMsg = true
-    this.updateScrollBar()
 
+    // mandar a msg do USUARIO para CONVERSATION
     this.conversationService.sendMessage(chatData)
       .subscribe(res => {
-
-        this.carregarMsg = false
 
         //Verifica se deve criar o componente de vídeos do Youtube
         const watsonDefinitionVideoIntentId = true;
         if (watsonDefinitionVideoIntentId) {
 
+          // procurar o VIDEO com a MSG do USUARIO
           this.youtubeService.searchVideo(msg)
             .subscribe(res => {
+
+              // remover o CARREGAMENTO do digitar
+              this.carregarMsg = false
               
+              // criar balao com o VIDEO do filme em que o USUARIO digitou
               const factory = this.componentFactoryResolver.resolveComponentFactory(BallonsComponent);
               var ref = this.divBallons.createComponent(factory);
               ref.instance.setIsLeft = true;
+              // setar o TITULO do video
+              // SE setou, ele cria mais um balao com o VIDEO
               ref.instance.setMessage = res[0].snippet.title;
               ref.instance.setVideoUrl = `https://www.youtube.com/embed/${res[0].id.videoId}`;
               ref.changeDetectorRef.detectChanges();
+
+              // scrollTop na TELA
               this.updateScrollBar()
             })
-
-          // const youtubeFactory = this.componentFactoryResolver.resolveComponentFactory(YoutubeComponent);
-          // var youtubeRef = this.divBallons.createComponent(youtubeFactory);
-          // youtubeRef.instance.setVideoUrl = `https://www.youtube.com/results?search_query=msg`;
-          // https://www.googleapis.com/youtube/v3/search?q=dota2&part=snippet&key=AIzaSyBZt1day2zN1PjpgzRgkZ3tFfyigMygkyM
-          // https://www.youtube.com/embed/VIDEO_ID
         }
         
         // let msg = res.output.text
@@ -126,8 +147,12 @@ export class ChatComponent implements OnInit {
         // ref.instance.setIsLeft = true;
         // ref.instance.setMessage = msg;
         // ref.changeDetectorRef.detectChanges();
+
+        // scrollTop na TELA
         this.updateScrollBar()
       })
+
+    // ESVAZIAR o INPUT e dar scrollTop na TELA
     this.dialogMessage = null
     this.updateScrollBar()
   }
