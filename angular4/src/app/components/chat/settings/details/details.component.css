@@ -30,11 +30,11 @@
 .example-header-image img {
     border-radius: 25px;
     min-height: 20vh;
-    min-width: 60vw;
+    min-width: 80vw;
 }
 
 .header {
-    margin-top: 4vh;
+    margin-top: 6vh;
     width: 100%;
     display: flex;
     flex-flow: column;
@@ -43,9 +43,9 @@
 }
 
 .content {
+    margin-top: 4vh;
     width: 100%;
     text-align: center;
-    height: auto;
 }
 
 #youtube {
