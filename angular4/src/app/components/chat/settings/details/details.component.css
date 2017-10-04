@@ -34,11 +34,12 @@
 }
 
 .header {
-    margin-top: 10vh;
+    margin-top: 6vh;
     width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
+    min-height: 10vh;
 }
 
 .content {
