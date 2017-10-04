@@ -34,12 +34,11 @@
 }
 
 .header {
-    margin-top: 6vh;
+    margin-top: 10vh;
     width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: space-around;
 }
 
 .content {
