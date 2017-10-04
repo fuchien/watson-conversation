@@ -2,7 +2,7 @@
     width: 95vw;
     display: flex;
     margin: 2vh auto;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 .example-card {
@@ -16,6 +16,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    justify-content: space-around;
 }
 
 .example-header-image {
@@ -29,15 +30,16 @@
 .example-header-image img {
     border-radius: 25px;
     min-height: 20vh;
-    min-width: 80vw;
+    min-width: 60vw;
 }
 
 .header {
-    margin-top: 5vh;
+    margin-top: 4vh;
     width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
+    justify-content: space-around;
 }
 
 .content {
@@ -72,6 +74,7 @@
 @media (min-width: 768px) {
     .container {
         width: 80vw;
+        min-height: 80vh;
     }
 
     .head {
