@@ -60,8 +60,8 @@ export class LoginComponent implements OnInit {
       ConversationService.setLogin(user.user.providerData[0])
       this.router.navigate(['/chat/filmes'])
     })
-    .catch(function (error){
-      alert('${error.message} Please try again')
+    .catch((error) => {
+      this.openDialog('Error. Please try again!')
     })
   }
 
