@@ -26,8 +26,7 @@ function ConversationController() {
             if (err) {
                 console.log('error:', err);
             } else {
-
-                response.output.text[0] = response.output.text[0].replace('Hi.', `Hi ${login.nome}.`)
+                response.output.text[0] = response.output.text[0].replace('Hi.', `Hi ${login.displayName}.`)
                 res.status(200).json(response)
             }
         });

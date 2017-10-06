@@ -1,7 +1,6 @@
 <md-toolbar color="primary">
   <span>Bluehack</span>
 </md-toolbar>
-<!-- <input type="file" (change)="fileChange($event)" multiple="multiple" placeholder="Upload file"> -->
 
 <div class="chat">
   <div class="example-form" *ngIf="!inProgress">
@@ -16,10 +15,9 @@
         </md-error>
       </md-form-field>
     </form>
+    <button md-raised-button color="primary" (click)="loginFacebook()" *ngIf="!(user | async)?.uid" >Login with Facebook</button>
   </div>
   <div class="progress">
     <md-progress-bar mode="indeterminate" *ngIf="inProgress"></md-progress-bar>
   </div>
 </div>
-<!-- (keypress)="eventKeyHandler($event, login.value)" -->
-<!-- *ngIf="loginFormControl.hasError('required')" -->

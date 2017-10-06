@@ -27,6 +27,9 @@ import {
   MdMenuModule
 } from '@angular/material'
 import 'hammerjs'
+import { AngularFireModule } from 'angularfire2'
+// New imports to update based on AngularFire2 version 4
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { KzMaskDirective } from './components/login/mask.directive';
 import { AppComponent } from './app.component';
@@ -50,6 +53,15 @@ import { CarregarDirective } from './components/chat/carregar.directive';
 import { FilmesComponent } from './components/chat/settings/filmes/filmes.component';
 import { DetailsComponent } from './components/chat/settings/details/details.component';
 import { SafePipe } from './pipes/SafePipe/safe.directive';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyArIptzYWVDJNxwr21ftD-vFROX6U42xe4",
+  authDomain: "authentication-9ca94.firebaseapp.com",
+  databaseURL: "https://authentication-9ca94.firebaseio.com",
+  projectId: "authentication-9ca94",
+  storageBucket: "authentication-9ca94.appspot.com",
+  messagingSenderId: "781141565823"
+}
 
 @NgModule({
   declarations: [
@@ -93,7 +105,9 @@ import { SafePipe } from './pipes/SafePipe/safe.directive';
     MdButtonModule,
     MdInputModule,
     MdMenuModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   entryComponents: [
     BallonsComponent,

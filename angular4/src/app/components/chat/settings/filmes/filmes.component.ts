@@ -42,6 +42,11 @@ export class FilmesComponent implements OnInit {
               lista.push(filmeNowPlaying)
             })
 
+            lista.forEach(filmes => {
+              if (filmes.backdrop_path == undefined)
+                filmes.backdrop_path = filmes.poster_path
+            })
+            
             this.movies = lista
           })
       })

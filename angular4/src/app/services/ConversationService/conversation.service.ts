@@ -30,7 +30,6 @@ export class ConversationService {
   sendMessage(content: ChatModel) {
 
     content.setContext = this.context;
-    // let body = JSON.stringify(data)
     let body = JSON.stringify({
       input: {
         text: content.getText

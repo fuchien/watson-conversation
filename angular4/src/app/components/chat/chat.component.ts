@@ -5,6 +5,8 @@ import { Component, OnInit,
   ViewChild,
   AfterViewInit
 } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router';
 
 import { ConversationService } from './../../services/ConversationService/conversation.service';
 import { MoviesService } from './../../services/MoviesService/movies.service';
@@ -30,7 +32,9 @@ export class ChatComponent implements OnInit {
     private cdr: ChangeDetectorRef,
     private componentFactoryResolver: ComponentFactoryResolver,
     private youtubeService: YoutubeService,
-    private moviesService: MoviesService
+    private moviesService: MoviesService,
+    public afAuth: AngularFireAuth,
+    private _router: Router
   ) {
     
   }
@@ -155,6 +159,11 @@ export class ChatComponent implements OnInit {
     // ESVAZIAR o INPUT e dar scrollTop na TELA
     this.dialogMessage = null
     this.updateScrollBar()
+  }
+
+  logout() {
+    this.afAuth.auth.signOut()
+    this._router.navigate([''])
   }
 
   //Função responsável por colocar a barra de rolagem exibindo a última mensagem

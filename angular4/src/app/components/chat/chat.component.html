@@ -1,5 +1,5 @@
 <md-tab-group class="tabs">
-  <md-tab color="primary" label="Settings" *ngIf="isAdmin">
+  <md-tab color="primary" label="Settings">
     <div class="menu">
       <button md-icon-button [mdMenuTriggerFor]="menu">
         <md-icon>more_vert</md-icon>
@@ -17,10 +17,9 @@
           <md-icon>account_circle</md-icon>
           <span>Users</span>
         </button>
-        <!-- <button md-menu-item>
-          <md-icon>notifications_off</md-icon>
-          <span>Disable alerts</span>
-        </button> -->
+        <button md-menu-item (click)="logout()">
+          <span>Logo Out</span>
+        </button>
       </md-menu>
     </div>
     <router-outlet></router-outlet>

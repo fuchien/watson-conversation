@@ -14,9 +14,14 @@
 
 .example-form {
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
     min-width: 90%;
+}
+
+.example-form button {
+    min-width: 90vw;
 }
 
 .example-full-width {
@@ -40,7 +45,8 @@
         max-width: 40vw;
     }
 
-    .example-full-width {
-        width: 40%;
+    .example-form button, .example-full-width {
+        min-width: 40vw;
+        max-width: 40vw;
     }
 }
