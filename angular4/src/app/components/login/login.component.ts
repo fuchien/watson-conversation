@@ -36,12 +36,15 @@ export class LoginComponent implements OnInit {
     private http: Http,
     public afAuth: AngularFireAuth
   ) {
+
+    // criar o FORMULARIO
     this.myForm = fb.group({
       'cpf': [null, Validators.compose([Validators.required, Validators.minLength(10)])]
     })
 
     this.user = this.afAuth.authState
 
+    // verificar se a PESSOA ja fez login com o FACEBOOK
     this.afAuth.authState.subscribe(afAuth => {
       if(afAuth) {
         ConversationService.setLogin(afAuth.providerData[0])
@@ -54,6 +57,7 @@ export class LoginComponent implements OnInit {
 
   }
 
+  // o botao de LOGIN com o FACEBOOK
   loginFacebook() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
     .then(user => {
@@ -65,10 +69,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  logout() {
-    this.afAuth.auth.signOut();
-  }
-
+  // abrir o DIALOG
   openDialog(msg: string): void {
     let dialogRef = this.dialog.open(ErrorUserComponent, {
       width: 'auto',
@@ -76,19 +77,29 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  // enviar os DADOS do FORM
   enviarDados(post, isValid: boolean) {
 
+    // se o form esta VALIDO
     if (isValid) {
 
       let cpf = post.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,"\$1.\$2.\$3\-\$4")
       this.cpf = cpf
+
+      // mostrar a barra de PROGRESS
       this.inProgress = true
 
       this.userService.pegarUser(this.cpf)
         .subscribe(res => {
+
+            // guardar os dados no SERVICE
+            // manda para pagina de FILMES
             ConversationService.setLogin(res)
             this.router.navigate(['/chat/filmes'])
           }, err => {
+
+            // remover a barra de PROGRESS
+            // mostrar a MSG de ERRO
             this.inProgress = false
             this.openDialog(err.json().msg)
           })

@@ -13,6 +13,8 @@ export class YoutubeService {
     private _http: Http
   ) { }
 
+  // PROCURAR video no YOUTUBE
+  // com TRAILER LEGENDADO
   searchVideo(query) {
 
     let q = `${query} trailer legendado`

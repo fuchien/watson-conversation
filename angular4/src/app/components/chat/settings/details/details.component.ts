@@ -12,7 +12,7 @@ import { MoviesService } from './../../../../services/MoviesService/movies.servi
 })
 export class DetailsComponent implements OnInit {
 
-  movie: Movie = new Movie()
+  movie: Movie
   videoUrl: string = ''
   buscando: boolean = true
 
@@ -25,35 +25,52 @@ export class DetailsComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       
-        let id = params['id'];
-        if(id) {
+      // pegar a variavel da ROTA
+      let id = params['id'];
 
-          this.moviesService.getIdDetails(id)
-            .subscribe(movie => {
+      // validar se EXISTE a variavel
+      if(id) {
 
-              this.movie = movie
+        // pegar os DETALHES do filme do ID
+        this.moviesService.getIdDetails(id)
+          .subscribe(movie => {
 
-              this.moviesService.getVideoKey(this.movie.id)
-                .subscribe(res => {
+            // setar na VARIAVEL MOVIE para mostrar os DETALHES na TELA
+            this.movie = movie
 
-                  if (res.results[0] != undefined) {
+            // pegar o KEY do VIDEO
+            this.moviesService.getVideoKey(this.movie.id)
+              .subscribe(res => {
 
-                    this.buscando = false
-                    this.videoUrl = `https://www.youtube.com/embed/${res.results[0].key}`
-                  } else {
+                // validar se ESTA VAZIO ou NAO a KEY
+                if (res.results[0] != undefined) {
 
-                    this.youtubeService.searchVideo(this.movie.title)
-                      .subscribe(resp => {
-                        
-                        this.buscando = false
-                        this.videoUrl = `https://www.youtube.com/embed/${resp[0].id.videoId}`
-                      })
-                  }
-                })
-            }, erro => {
-              console.log(erro)
-            });
-        }
+                  // remover o SPIN de carregamento
+                  this.buscando = false
+
+                  // mostrar o VIDEO do YOUTUBE na tela
+                  this.videoUrl = `https://www.youtube.com/embed/${res.results[0].key}`
+
+                  // SE ESTIVER VAZIO
+                  // faca outra BUSCA direto no YOUTUBE com o TITULO do filme
+                } else {
+
+                  // procurar o VIDEO com o TITULO no YOUTUBE
+                  this.youtubeService.searchVideo(this.movie.title)
+                    .subscribe(resp => {
+                      
+                      // remover o SPIN de carregamento
+                      this.buscando = false
+
+                      // mostrar o VIDEO do YOUTUBE na tela
+                      this.videoUrl = `https://www.youtube.com/embed/${resp[0].id.videoId}`
+                    })
+                }
+              })
+          }, erro => {
+            console.log(erro)
+          });
+      }
 
     });
   }
@@ -63,7 +80,7 @@ export class DetailsComponent implements OnInit {
 
 }
 
-export class Movie {
+export interface Movie {
   overview: string
   poster_path: string
   release_date: string

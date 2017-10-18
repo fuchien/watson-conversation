@@ -11,6 +11,7 @@ export class AuthGuard implements CanActivate {
 
     }
 
+    // validar se LOGIN esta vazio ou NAO
     canActivate() : boolean {
         let login = ConversationService.getLogin();
         if (login !== null) {

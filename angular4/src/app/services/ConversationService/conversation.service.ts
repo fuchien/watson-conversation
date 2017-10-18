@@ -19,14 +19,17 @@ export class ConversationService {
     
   }
 
+  // setar os DADOS do USUARIO
   static setLogin(login: object) {
     this.login = login
   }
 
+  // pegar os DADOS do USUARIO
   static getLogin(): any {
     return this.login
   }
 
+  // mandar MSG para conversation
   sendMessage(content: ChatModel) {
 
     content.setContext = this.context;

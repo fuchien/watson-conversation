@@ -8,29 +8,42 @@ export class MoviesService {
 
   private BASE_URL: string = 'https://api.themoviedb.org/3/movie'
   private API_KEY: string = 'e7af7935c4c1ded50816a8fbf0e67bf1'
+  private static movies: any = []
 
   constructor(
     private _http: Http
   ) { }
 
-  getMoviesUpComing() {
+  // PEGAR os filmes guardados no servico
+  static getMovies() {
+    return this.movies
+  }
 
-    return this._http.get(`${this.BASE_URL}/upcoming?api_key=${this.API_KEY}&language=pt-BR`)
+  // GUARDAR os filmes no servico
+  static setMovies(movies) {
+    this.movies.push(movies)
+  }
+
+  // limpar o ARRAY de filmes
+  static clearMovies() {
+    this.movies.length = 0
+  }
+
+  // PEGAR os filmes com a PAGINA = ID e tipoLancamento (upcoming, now_playing...)
+  getMovies(id, tipoLancamento) {
+
+    return this._http.get(`${this.BASE_URL}/${tipoLancamento}?api_key=${this.API_KEY}&language=pt-BR&page=${id}`)
       .map((res: Response) => res.json())
   }
 
-  getMoviesNowPlaying() {
-    
-    return this._http.get(`${this.BASE_URL}/now_playing?api_key=${this.API_KEY}&language=pt-BR`)
-      .map((res: Response) => res.json())
-  }
-
+  // PEGAR os detalhes do FILME
   getIdDetails(id) {
 
     return this._http.get(`${this.BASE_URL}/${id}?api_key=${this.API_KEY}&language=pt-BR`)
       .map((res: Response) => res.json())
   }
 
+  // pegar a KEY do VIDEO
   getVideoKey(id) {
 
     return this._http.get(`${this.BASE_URL}/${id}/videos?api_key=${this.API_KEY}&language=pt-BR`)
