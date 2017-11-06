@@ -4,8 +4,8 @@ function IpController() {
 
     this.validarIp = (req, res, next) => {
 
-        let resp = `<h1>Seu ip é ${req.headers['x-forwarded-for']} / ${req.general}</h1>`
-        console.log(req.general)
+        let resp = `<h1>Seu ip é ${req.headers['x-forwarded-for']} / ${req.headers.host}</h1>`
+        console.log(req.headers.host)
         res.send(resp);
     }
 }
