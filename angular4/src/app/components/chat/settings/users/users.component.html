@@ -1,21 +1,21 @@
 <h2>Users</h2>
 
-<!-- <button md-button color="primary" routerLink="salvaruser">Criar novo usuário</button> -->
+<!-- <button mat-button color="primary" routerLink="salvaruser">Criar novo usuário</button> -->
 <div class="newuser">
-  <button md-raised-button color="primary" (click)="goSalvarUser()">Criar novo usuário</button>
+  <button mat-raised-button color="primary" (click)="goSalvarUser()">Criar novo usuário</button>
 </div>
 
 <div class="table">
-  <md-list>
-    <md-list-item *ngFor="let user of users" class="items">
-      <md-icon mdListIcon>account_circle</md-icon>
+  <mat-list>
+    <mat-list-item *ngFor="let user of users" class="items">
+      <mat-icon matListIcon>account_circle</mat-icon>
       <h5 class="item nome"> {{user.nome}} </h5>
       <p class="item cpf"><span> {{user.cpf}} </span></p>
       <p class="item"><span class="demo-2"> {{user.descricao}} </span></p>
       <p class="item admin"><span class="demo-2"> {{user.admin}} </span></p>
-      <button md-raised-button color="primary" class="item" (click)="atualizarUser(user)">Editar</button>
-      <button md-raised-button color="warn" class="item" (click)="deletarUser(user)">Remover</button>
-    </md-list-item>
-  </md-list>
+      <button mat-raised-button color="primary" class="item" (click)="atualizarUser(user)">Editar</button>
+      <button mat-raised-button color="warn" class="item" (click)="deletarUser(user)">Remover</button>
+    </mat-list-item>
+  </mat-list>
 </div>
 <!-- <router-outlet></router-outlet> -->

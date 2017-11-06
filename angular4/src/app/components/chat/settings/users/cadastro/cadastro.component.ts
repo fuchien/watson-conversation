@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewContainerRef } from '@angular/core';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
@@ -29,7 +29,7 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    public snackBar: MdSnackBar,
+    public snackBar: MatSnackBar,
     private userService: UserService,
     private _location: Location,
     private route: ActivatedRoute

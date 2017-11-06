@@ -1,30 +1,30 @@
-<md-tab-group class="tabs">
-  <md-tab color="primary" label="Settings">
+<mat-tab-group class="tabs">
+  <mat-tab color="primary" label="Settings">
     <div class="menu">
-      <button md-icon-button [mdMenuTriggerFor]="menu">
-        <md-icon>more_vert</md-icon>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
       </button>
-      <md-menu #menu="mdMenu">
-        <button md-menu-item routerLink="apis">
-          <md-icon>dialpad</md-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="apis">
+          <mat-icon>dialpad</mat-icon>
           <span>APIs</span>
         </button>
-        <button md-menu-item routerLink="filmes">
-          <md-icon>local_movies</md-icon>
+        <button mat-menu-item routerLink="filmes">
+          <mat-icon>local_movies</mat-icon>
           <span>Filmes</span>
         </button>
-        <button md-menu-item routerLink="users">
-          <md-icon>account_circle</md-icon>
+        <button mat-menu-item routerLink="users">
+          <mat-icon>account_circle</mat-icon>
           <span>Users</span>
         </button>
-        <button md-menu-item (click)="logout()">
+        <button mat-menu-item (click)="logout()">
           <span>Logo Out</span>
         </button>
-      </md-menu>
+      </mat-menu>
     </div>
     <router-outlet></router-outlet>
-  </md-tab>
-  <md-tab label="Chat">
+  </mat-tab>
+  <mat-tab label="Chat">
     <div class="chat">
       <div class="form">
         <div id="divOverflow" class="panel-body panelChat">
@@ -37,15 +37,15 @@
         </div>
     
         <form class="example-form">
-          <md-form-field class="example-full-width">
-            <input mdInput #message maxlength="50" autofocus [(ngModel)]="dialogMessage" class="form-control"
+          <mat-form-field class="example-full-width">
+            <input matInput #message maxlength="50" autofocus [(ngModel)]="dialogMessage" class="form-control"
             name="message" placeholder="Message" (keypress)="eventKeyHandler($event, message.value)">
-            <md-icon mdSuffix>send</md-icon>
-            <md-hint align="start"><strong>Tecle ENTER para enviar a mensagem</strong> </md-hint>
-            <md-hint align="end">{{message.value.length}} / 50</md-hint>
-          </md-form-field>
+            <mat-icon matSuffix>send</mat-icon>
+            <mat-hint align="start"><strong>Tecle ENTER para enviar a mensagem</strong> </mat-hint>
+            <mat-hint align="end">{{message.value.length}} / 50</mat-hint>
+          </mat-form-field>
         </form>
       </div>
     </div>
-  </md-tab>
-</md-tab-group>
+  </mat-tab>
+</mat-tab-group>

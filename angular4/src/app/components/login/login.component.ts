@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MdDialog} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private userService: UserService,
-    public dialog: MdDialog,
+    public dialog: MatDialog,
     private fb: FormBuilder,
     private http: Http,
     public afAuth: AngularFireAuth
@@ -54,7 +54,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   // o botao de LOGIN com o FACEBOOK
@@ -104,5 +103,14 @@ export class LoginComponent implements OnInit {
             this.openDialog(err.json().msg)
           })
     }
+  }
+
+  getFileUrl() {
+
+    this.userService.getFileUrl()
+      .subscribe(resp => {
+
+        console.log(resp)
+      })
   }
 }

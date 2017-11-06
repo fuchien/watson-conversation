@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MdSnackBar} from '@angular/material';
+// import {matSnackBar} from '@angular/material';
 
 import { ToneService } from './../../../../services/ToneService/tone.service';
 
@@ -23,7 +23,7 @@ export class SettingsToneComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private toneService: ToneService,
-    public snackBar: MdSnackBar
+    // public snackBar: matSnackBar
   ) {
     this.myForm = fb.group({
       'username': [null, Validators.required],
@@ -38,9 +38,9 @@ export class SettingsToneComponent implements OnInit {
         this.username = res.username
         this.password = res.password
       }, err => {
-        this.snackBar.open(err.json().msg, 'OK', {
-          duration: 3000
-        });
+        // this.snackBar.open(err.json().msg, 'OK', {
+        //   duration: 3000
+        // });
       })
   }
 
@@ -53,9 +53,9 @@ export class SettingsToneComponent implements OnInit {
     if (isValid) {
 
       if (post.username === this.username && post.password === this.password) {
-        this.snackBar.open('As credenciais são iguais', 'OK', {
-          duration: 3000
-        });
+        // this.snackBar.open('As credenciais são iguais', 'OK', {
+        //   duration: 3000
+        // });
         return
       }
 
@@ -70,13 +70,13 @@ export class SettingsToneComponent implements OnInit {
       this.toneService.enviarCredenciais(credenciais)
         .subscribe(res => {
           this.enviando = false
-          this.snackBar.open(res.msg, 'OK', {
-            duration: 3000
-          });
+          // this.snackBar.open(res.msg, 'OK', {
+          //   duration: 3000
+          // });
         }, err => {
-          this.snackBar.open(err.json().msg, 'OK', {
-            duration: 3000
-          });
+          // this.snackBar.open(err.json().msg, 'OK', {
+          //   duration: 3000
+          // });
         })
     }
   }

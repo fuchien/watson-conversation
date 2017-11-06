@@ -1,35 +1,35 @@
-<md-expansion-panel>
-  <md-expansion-panel-header>
-    <md-panel-title>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
       Tone Analyzer
-    </md-panel-title>
-    <md-panel-description>
+    </mat-panel-title>
+    <mat-panel-description>
       Coloque os seus credenciais
-    </md-panel-description>
-  </md-expansion-panel-header>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
   
   <form [formGroup]="myForm" (ngSubmit)="enviarCredenciais(myForm.value, myForm.valid)">
-    <md-form-field class="field">
-      <input mdInput placeholder="username" formControlName="username" [(ngModel)]="username"
+    <mat-form-field class="field">
+      <input matInput placeholder="username" formControlName="username" [(ngModel)]="username"
       class="form-control" name="username">
-      <md-error *ngIf="myForm.controls.username.invalid">
+      <mat-error *ngIf="myForm.controls.username.invalid">
         username é <strong>obrigatório</strong>
-      </md-error>
-    </md-form-field>
+      </mat-error>
+    </mat-form-field>
     
-    <md-form-field class="field">
-      <input mdInput placeholder="password" formControlName="password" [(ngModel)]="password"
+    <mat-form-field class="field">
+      <input matInput placeholder="password" formControlName="password" [(ngModel)]="password"
       class="form-control" name="password">
-      <md-error *ngIf="myForm.controls.password.invalid">
+      <mat-error *ngIf="myForm.controls.password.invalid">
         password é <strong>obrigatório</strong>
-      </md-error>
-    </md-form-field>
+      </mat-error>
+    </mat-form-field>
 
-    <md-action-row class="action">
-      <!-- <md-checkbox>Salvar</md-checkbox> -->
-      <md-slide-toggle color="primary" (click)="saveOrNot()">{{ isSave ? 'Save!' : 'Not save' }}</md-slide-toggle>
-      <button md-button color="primary" *ngIf="!enviando">ENVIAR</button>
-      <md-spinner class="spinner" *ngIf="enviando"></md-spinner>
-    </md-action-row>
+    <mat-action-row class="action">
+      <!-- <mat-checkbox>Salvar</mat-checkbox> -->
+      <mat-slide-toggle color="primary" (click)="saveOrNot()">{{ isSave ? 'Save!' : 'Not save' }}</mat-slide-toggle>
+      <button mat-button color="primary" *ngIf="!enviando">ENVIAR</button>
+      <mat-spinner class="spinner" *ngIf="enviando"></mat-spinner>
+    </mat-action-row>
   </form>
-</md-expansion-panel>
+</mat-expansion-panel>

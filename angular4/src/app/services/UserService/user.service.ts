@@ -80,4 +80,32 @@ export class UserService {
       })
   }
 
+  getFileUrl() {
+    
+    let body =  {
+        "auth": {
+            "identity": {
+                "methods": [
+                    "password"
+                ],
+              "password": {
+                    "user": {
+                          "id": "607cfe92a2514aebac4d3e19485e4a3a",
+                          "password": "Ac1)Nh)q=3YEOicD"
+                  }
+                }
+            },
+          "scope": {
+                "project": {
+                    "id": "4a3f3cb016564740b0ffa168cb40e934"
+              }
+            }
+        }
+    }
+    let headers = new Headers({ 'Content-type': 'application/json' });
+
+    return this._http.post(`https://identity.open.softlayer.com/v3/auth/tokens`, body, {headers: headers})
+        .map(res => res.json())
+  }
+
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
-import {MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-error-user',
@@ -13,11 +13,11 @@ import {MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 })
 export class ErrorUserComponent implements OnInit {
 
-  _injectedValue: any = 'Usuário não existe!';
+  _injectedValue: any
 
   constructor(
-    public thisDialogRef: MdDialogRef<ErrorUserComponent>,
-    @Inject(MD_DIALOG_DATA) private data: any
+    public thisDialogRef: MatDialogRef<ErrorUserComponent>,
+    @Inject(MAT_DIALOG_DATA) private data: any
   ) {
     if(this.data) {
       this._injectedValue = this.data;

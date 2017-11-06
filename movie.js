@@ -47,4 +47,14 @@ function formatDate(date) {
 }
 
 var time = new Date();
-console.log(formatDate(time.setDate(time.getDate()-1)))
+// console.log(formatDate(time.setDate(time.getDate()-1)))
+
+
+let a = 10
+let b
+
+if (!b) {
+  a = 20
+}
+
+console.log(a)
