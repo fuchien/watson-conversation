@@ -1,4 +1,4 @@
 export const environment = {
-  backend_domain: 'https://bluehack.herokuapp.com',
+  backend_domain: 'https://cinetrailers.herokuapp.com',
   production: true
 };
